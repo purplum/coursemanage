@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <ul class="menu">
-               <span style="font-family: 微软雅黑;font-size: 22px;font-weight:bold;">欢迎使用网上选课系统</span>
+               <span style="font-family: 微软雅黑;font-size: 22px;font-weight:bold;">徐汇区逸夫小学俱乐部报名系统</span>
             </ul>
         </div>
     </div>
@@ -71,13 +71,13 @@
             <form method="post" action="logincheck.php" class="fh5co-form animate-box" data-animate-effect="fadeInRight" onsubmit="return checklogin()">
                 <h2>用户登录</h2>
                 <div class="form-group">
-                    <label for="username" class="">用户名</label>
+                    <label for="username" class="">身份证号码</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off">
                 </div>
-                <div class="form-group">
-                    <label for="password" class="">密码</label>
-                    <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" onfocus="this.type='password'">
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="password" class="">密码</label>-->
+<!--                    <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" onfocus="this.type='password'">-->
+<!--                </div>-->
                 <div class="form-group">
                     <label for="shenfen" class="">选择身份：</label>
                     <select name="shenfen" size="1" style="margin-left: 0px;width: 100px;">
@@ -85,19 +85,19 @@
                         <option value="teacher">教师</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <span  class="">验证码：</span><br/>
-                    <input type="text" class="" id="yzm" name="yzm" placeholder="验证码" autocomplete="off" style="margin-left: 2px;width:110px; height:30px;margin-top: 16px;" >
-
-                    <img id="captcha_img" border='1' src='captcha.php?r=echo rand();' style="width:100px; height:30px;margin-left: 15px;padding-top: -2px; " />
-
-                    <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./captcha.php?r='+Math.random()" style="width:100px; height:30px;margin-left: 5px;">换一个</a>
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <span  class="">验证码：</span><br/>-->
+<!--                    <input type="text" class="" id="yzm" name="yzm" placeholder="验证码" autocomplete="off" style="margin-left: 2px;width:110px; height:30px;margin-top: 16px;" >-->
+<!---->
+<!--                    <img id="captcha_img" border='1' src='captcha.php?r=echo rand();' style="width:100px; height:30px;margin-left: 15px;padding-top: -2px; " />-->
+<!---->
+<!--                    <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./captcha.php?r='+Math.random()" style="width:100px; height:30px;margin-left: 5px;">换一个</a>-->
+<!--                </div>-->
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"> Remember Me</label>
                 </div>
                 <div class="form-group">
-                    <p>没有帐号？ <a href="sign-up.php">注册</a>&nbsp;|&nbsp;忘记密码？<a href="forgot.html">找回密码</a>
+                    <p>没有帐号？ <a href="sign-up.php">注册</a>&nbsp;
                     </p>
                 </div>
                 <div class="form-group">
@@ -111,9 +111,8 @@
     <div class="row" style="padding-top: 60px; clear: both;">
         <div class="col-md-12 text-center">
             <p>
-                <small>&copy; All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank"
-                                                                     title="模板之家">xxx</a> - Collect from <a
-                            href="http://www.cssmoban.com/" title="网页模板" target="_blank">xxx</a></small>
+                <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
+                                                                title="YF course">徐汇区逸夫小学</a></small>
             </p>
         </div>
     </div>
@@ -125,9 +124,13 @@
         var password = document.getElementById("password").value;
         var yzm = document.getElementById("yzm").value;
         if (name == "" || name.length == 0) {
-            layer.alert("学号不能为空！");
+            layer.alert("身份证号不能为空！");
             return false;
         }
+        // if (18 > name.length) {
+        //     layer.alert("身份证号错误！");
+        //     return false;
+        // }
         if(password ==""||password.length==0){
             layer.alert("密码不能为空！");
             return false;

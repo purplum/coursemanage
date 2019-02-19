@@ -71,6 +71,14 @@
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" autocomplete="off">
                 </div>
                 <div class="form-group">
+                    <label for="studentid" class="">学号：</label>
+                    <input type="text" class="form-control" id="studentid" name="studentid" placeholder="Studentid" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="personid" class="">身份证号：</label>
+                    <input type="text" class="form-control" id="personid" name="personid" placeholder="Personid" autocomplete="off">
+                </div>
+                <div class="form-group">
                     <label for="password" class="">密码：</label>
                     <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off"
                            onfocus="this.type='password'">
@@ -83,8 +91,24 @@
                     <label id="tishi2" style="display: none;color: green;">√ 两次密码一致</label>
                 </div>
                 <div class="form-group">
+                    <label for="sgrade" class="">年级：</label>
+                    <input type="text" class="form-control" id="sgrade" name="sgrade" placeholder="Sgrade" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="sclass" class="">班级：</label>
+                    <input type="text" class="form-control" id="sclass" name="sclass" placeholder="Sclass" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="stel" class="">手机号：</label>
+                    <input type="text" class="form-control" id="stel" name="stel" placeholder="Stel" autocomplete="off">
+                </div>
+                <div class="form-group">
                     <label for="email" class="">邮箱：</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="saddress" class="">地址：</label>
+                    <input type="text" class="form-control" id="saddress" name="saddress" placeholder="Saddress" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"> Remember Me</label>
@@ -104,9 +128,8 @@
     <div class="row" style="padding-top: 60px; clear: both;">
         <div class="col-md-12 text-center">
             <p>
-                <small>&copy; All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank"
-                                                                     title="模板之家">模板之家</a> - Collect from <a
-                        href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small>
+                <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
+                                                                title="YF course">xxx</a></small>
             </p>
         </div>
     </div>

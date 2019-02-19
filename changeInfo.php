@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['username'] = '谭鹏';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -20,7 +19,7 @@
 
     </script>
 </head>
-<body>
+<body class="style-3">
 <div class="banner">
     <div class="bgh">
         <div class="page">
@@ -33,7 +32,7 @@
 
                 <?php $sid = $_SESSION['xuehao'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
                 <a href="#">密码修改</a>
-                <a onclick="loginOut()" href="javascript:">安全退出</a>
+                <a href="logout.php">安全退出</a>
             </div>
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
@@ -118,7 +117,7 @@
                             <td align="right" width="80">姓名：</td>
                             <td><?php echo $_SESSION['username']?></td>
                             <td align="right" width="90">学号：</td>
-                            <td><?php echo $_SESSION['xuehao']?>&nbsp;</td>
+                            <td><?php echo $_SESSION['studentid']?>&nbsp;</td>
 
                             <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="Images/<?php echo $_SESSION['stx']?>" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
                         </tr>
@@ -128,22 +127,26 @@
 
                         </tr>
                         <tr>
+                            <td align="right">身份证号码：</td>
+                            <td><input type="text" value="<?php echo $_SESSION['personid']?>" style="height: 25px;" name="personid"></td>
                             <td align="right">手机号码：</td>
                             <td><input type="text" value="<?php echo $_SESSION['stel']?>" style="height: 25px;" name="stel"></td>
-                            <td align="right">第二联系号码：</td>
-                            <td><input type="text" value="<?php echo $_SESSION['stel2']?>" style="height: 25px;" name="stel2"></td>
 
                         </tr>
                         <tr>
-                            <td align="right">QQ:</td>
-                            <td><input type="text" value="<?php echo $_SESSION['sqq']?>" style="height: 25px;" name="sqq"></td>
+                            <td align="right">年级:</td>
+                            <td><input type="text" value="<?php echo $_SESSION['sgrade']?>" style="height: 25px;" name="sgrade"></td>
+                            <td align="right">班级:</td>
+                            <td><input type="text" value="<?php echo $_SESSION['sclass']?>" style="height: 25px;" name="sclass"></td>
+
+                        </tr>
+                        <tr>
+
                             <td align="right">电子邮箱：</td>
                             <td><input type="text" value="<?php echo $_SESSION['email']?>" style="height: 25px;" name="email"></td>
-
-                        </tr>
-                        <tr>
                             <td align="right">联系地址：</td>
-                            <td colspan="6"><input type="text" value="<?php echo $_SESSION['sdizhi']?>" style="height: 25px;width: 500px;" name="sdizhi"></td>
+                            <td><input type="text" value="<?php echo $_SESSION['saddress']?>" style="height: 25px;" name="saddress"></td>
+
                         </tr>
                         <tr align="center">
                             <td colspan="5" height="40">
@@ -169,7 +172,9 @@
     
     <div class="footer">
         <p>
-            &copy;copyright 2012 广博教育 csgb.net 版权所有 站长统计</p>
+            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
+                                                            title="YF course">xxx</a></small>
+        </p>
     </div>
 </div>
 </body>

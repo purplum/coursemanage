@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['username'] = '谭鹏';
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -26,7 +26,7 @@ $_SESSION['username'] = '谭鹏';
 
     </script>
 </head>
-<body>
+<body class="style-3">
 
 <div class="banner">
     <div class="bgh">
@@ -38,9 +38,9 @@ $_SESSION['username'] = '谭鹏';
             </div>
             <div class="topxx">
 
-                <?php $sid = $_SESSION['xuehao'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
+                <?php $sid = $_SESSION['studentid'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
                 <a href="#">密码修改</a>
-                <a onclick="loginOut()" href="javascript:">安全退出</a>
+                <a href="logout.php">安全退出</a>
             </div>
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
@@ -130,22 +130,13 @@ $_SESSION['username'] = '谭鹏';
                             老师
                         </th>
                         <th style="width: 5%; text-align: center;">
-                            学分
-                        </th>
-                        <th style="width: 5%; text-align: center;">
-                            学时
-                        </th>
-                        <th style="width: 9%; text-align: center;">
-                            上课时间
-                        </th>
-                        <th style="width: 9%; text-align: center;">
-                            上课地点
+                            开课时间
                         </th>
                         <th style="width: 9%; text-align: center;">
                             已选/最大人数
                         </th>
-                        <th style="width: 13%; text-align: center;">
-                            所属系
+                        <th style="width: 5%; text-align: center;">
+                            学时
                         </th>
 
                     </tr>
@@ -171,29 +162,20 @@ $_SESSION['username'] = '谭鹏';
                                     ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['cxuefen'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['cxueshi'] ?>
-                                </td>
-                                <td>
                                     <?php echo $row['ctime'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['cdidian'] ?>
+                                    <?php echo $row['ccurrent'] ?>/<?php echo $row['cmax'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['cyixuan'] ?>/<?php echo $row['cmax'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['cdep'] ?>
+                                    <?php echo $row['cxueshi'] ?>
                                 </td>
 
                             </tr>
                         <?php } ?>
                     <?php } else { ?>
                         <tr>
-                            <td colspan="9">尚未有课程发布，请耐心等待！</td>
+                            <td colspan="9">尚未选择课程，请选课！</td>
                         </tr>
                     <?php } ?>
 
@@ -215,7 +197,9 @@ $_SESSION['username'] = '谭鹏';
 
     <div class="footer">
         <p>
-            &copy;copyright 2017 tanpeng.net 版权所有 站长统计</p>
+            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
+                                                            title="YF course">xxx</a></small>
+        </p>
     </div>
 </div>
 </body>

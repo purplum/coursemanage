@@ -13,7 +13,7 @@
     include("db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
-    $sid = $_SESSION['xuehao'];
+    $sid = $_SESSION['sid'];
     $rs = $db->query("select cid from cc WHERE sid = $sid");
     $cids = $rs->fetchAll();
     //print_r($cids);

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>无标题文档</title>
+    <title>登录验证</title>
     <script src="layer/layer.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -13,8 +13,6 @@
     /**
      * Created by PhpStorm.
      * User: Administrator
-     * Date: 2017/6/5
-     * Time: 9:20
      */
     session_start();
     $name = file_get_contents("php://input");
@@ -26,7 +24,7 @@
     $db->query('set names utf8');
     /*$rs = $db->query('select * from student');
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
-    $username = $data['username'];
+    $personid = $data['username'];
     $shenfen = $data['shenfen'];
     $password = $data['password'];
     $yzm = $data['yzm'];
@@ -39,28 +37,30 @@
         echo "</script>";
     }
     if ($shenfen == "student") {
-        $rs = $db->query("select * from student WHERE sid='$username' and spassword='$password'");
+        $rs = $db->query("select * from student WHERE spersonid='$personid' and spassword='$password'");
         $num_rows = $rs->rowCount();
         if ($num_rows > 0) {
             echo "登录成功";
             session_start();
-            $rs2 = $db->query("select sname,semail,stel,stel2,sqq,stx,sdizhi from student WHERE sid = '$username'");
+            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress from student WHERE spersonid = '$personid'");
             $jieguo = $rs2->fetch();
+            $sid = $jieguo['sid'];
             $xingming = $jieguo['sname'];
+            $studentid = $jieguo['studentid'];
+            $sgrade = $jieguo['sgrade'];
+            $sclass = $jieguo['sclass'];
             $email = $jieguo['semail'];
             $stel = $jieguo['stel'];
-            $stel2 = $jieguo['stel2'];
-            $sqq = $jieguo['sqq'];
-            $stx = $jieguo['stx'];
-            $sdizhi = $jieguo['sdizhi'];
-            $_SESSION['xuehao'] = $username;
+            $saddress = $jieguo['saddress'];
+            $_SESSION['sid'] = $sid;
+            $_SESSION['studentid'] = $studentid;
+            $_SESSION['personid'] = $personid;
             $_SESSION['username'] = $xingming;
+            $_SESSION['sgrade'] = $sgrade;
+            $_SESSION['sclass'] = $sclass;
             $_SESSION['email'] = $email;
             $_SESSION['stel'] = $stel;
-            $_SESSION['stel2'] = $stel2;
-            $_SESSION['sqq'] = $sqq;
-            $_SESSION['stx'] = $stx;
-            $_SESSION['sdizhi'] = $sdizhi;
+            $_SESSION['saddress'] = $saddress;
             header('location:index2.php');
         } else {
             echo "<script>";

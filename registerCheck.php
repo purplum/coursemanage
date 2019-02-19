@@ -18,15 +18,36 @@
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
 
     $username = $data['name'];
+    $studentid = $data['studentid'];
+    $personid = $data['personid'];
+    $sgrade = $data['sgrade'];
+    $sclass = $data['sclass'];
+    $stel = $data['stel'];
+    $saddress = $data['saddress'];
     $email = $data['email'];
     $password = $data['password'];
-    $n = $db->query("insert into student(sname,spassword,semail) VALUES('$username','$password','$email')");
-    if ((int)$n > 0) {
-        echo "注册成功！";
-    } else {
+
+    $rs_1 = $db->query("select * from student WHERE spersonid='$personid'");
+    $num_rows = $rs_1->rowCount();
+    if ($num_rows > 0) {
         echo "<script>";
-        echo "alert(\"注册失败！\");";
-        echo "location.href=\"sign-up.php\"";
+        echo "alert(\"重复注册！您的身份证号已注册！\");";
+        echo "location.href=\"chooseCourse.php\"";
         echo "</script>";
+    } else {
+        $n = $db->query("insert into student(sname,studentid,spersonid,sgrade,sclass,stel,saddress,semail,spassword) VALUES('$username','$studentid','$personid','$sgrade','$sclass','$stel','$saddress','$email','$password')");
+        if ((int)$n > 0) {
+            echo "<script>";
+            echo "alert(\"注册成功\");";
+            echo "location.href=\"login.php\"";
+            echo "</script>";
+        } else {
+            echo "<script>";
+            echo "alert(\"注册失败！\");";
+            echo "location.href=\"sign-up.php\"";
+            echo "</script>";
+        }
     }
+
+
 ?>

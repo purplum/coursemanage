@@ -33,7 +33,7 @@
             </div>
             <div class="topxx">
 
-                <?php session_start(); $sid = $_SESSION['xuehao'];echo $sid ?>  学生：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
+                <?php session_start(); $sid = $_SESSION['studentid'];echo $sid ?>  学生：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
                 <a href="#">密码修改</a>
                 <a href="logout.php">安全退出</a>
             </div>
@@ -119,7 +119,7 @@
                         <td align="right" width="80">姓名：</td>
                         <td><?php echo $_SESSION['username']?></td>
                         <td align="right" width="90">学号：</td>
-                        <td><?php echo $_SESSION['xuehao']?>&nbsp;</td>
+                        <td><?php echo $_SESSION['studentid']?>&nbsp;</td>
 
                         <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="images/<?php echo $_SESSION['stx'] ?>" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
                     </tr>
@@ -129,22 +129,24 @@
 
                     </tr>
                     <tr>
+                        <td align="right">身份证号码：</td>
+                        <td><?php echo $_SESSION['personid']?></td>
                         <td align="right">手机号码：</td>
                         <td><?php echo $_SESSION['stel']?></td>
-                        <td align="right">第二联系号码：</td>
-                        <td><?php echo $_SESSION['stel2']?></td>
 
                     </tr>
                     <tr>
-                        <td align="right">QQ:</td>
-                        <td><?php echo $_SESSION['sqq']?></td>
+                        <td align="right">年级:</td>
+                        <td><?php echo $_SESSION['sgrade']?></td>
+                        <td align="right">班级:</td>
+                        <td><?php echo $_SESSION['sclass']?></td>
+
+                    </tr>
+                    <tr>
                         <td align="right">电子邮箱：</td>
                         <td><?php echo $_SESSION['email']?>&nbsp;</td>
-
-                    </tr>
-                    <tr>
                         <td align="right">联系地址：</td>
-                        <td colspan="4"><?php echo $_SESSION['sdizhi']?></td>
+                        <td colspan="4"><?php echo $_SESSION['saddress']?></td>
                     </tr>
                     <tr align="center">
                         <td colspan="5" height="40">

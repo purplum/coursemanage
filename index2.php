@@ -19,7 +19,7 @@
     <script src="Script/changeOption.js" type="text/javascript"></script>
     <script src="Script/rl.js" type="text/javascript"></script>
 </head>
-<body>
+<body class="style-3">
 
 
 <div class="banner">
@@ -32,9 +32,9 @@
             </div>
             <div class="topxx">
 
-                <?php session_start(); $sid = $_SESSION['xuehao'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
+                <?php session_start(); $sid = $_SESSION['studentid'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
                 <a href="#">密码修改</a>
-                <a onclick="loginOut()" href="javascript:">安全退出</a>
+                <a href="logout.php">安全退出</a>
             </div>
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
@@ -115,7 +115,9 @@
     </div>
     <div class="footer">
         <p>
-            &copy;copyright 2017 tanpeng.net 版权所有 </p>
+            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
+                                                            title="YF course">xxx</a></small>
+        </p>
     </div>
 </div>
 
