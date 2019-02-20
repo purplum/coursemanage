@@ -6,7 +6,7 @@
  * Time: 08:35
  */
 
-include_once("controller/globals.php");
+include_once("globals.php");
 
 
 

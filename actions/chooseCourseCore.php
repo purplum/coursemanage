@@ -14,7 +14,7 @@
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
 
-    $pageSize = 3;
+    $pageSize = 10;
     //查询所有记录的行数
     $res = $db->query('SELECT count(*) FROM course');
 

@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>登录验证</title>
-    <script src="../layer/layer.js"></script>
+    <script src="../themes/layer/layer.js"></script>
     <script src="../js/jquery-1.11.3.min.js"></script>
 
 </head>

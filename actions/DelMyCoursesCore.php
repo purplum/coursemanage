@@ -12,4 +12,5 @@
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
     $cou = $db->query("delete from cc WHERE sid = $sid AND cid = $cid");
-    header('location:../views/DelmyCoursesCore_Bef.php');
+    $db->query("update course set course.ccurrent=course.ccurrent-1 WHERE cid=$cid");
+    header('location:DelmyCoursesCore_Bef.php');

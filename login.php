@@ -33,11 +33,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="themes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/css/animate.css">
+    <link rel="stylesheet" href="themes/css/style.css">
     <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="layer/layer.js"></script>
+    <script src="themes/layer/layer.js"></script>
 
 
     <!-- Modernizr JS -->
@@ -61,7 +61,7 @@
     <div class="row">
 
         <div class="col-md-3 ">
-            <img src="images/Always.jpg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
+            <img src="themes/images/Always.jpg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
         </div>
         
         

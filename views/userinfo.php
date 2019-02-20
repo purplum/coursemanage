@@ -3,22 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>
-        徐汇区逸夫小学俱乐部报名系统
-    </title>
+    <?php include_once("../controller/functions.php");displayTitle('登录') ?>
 
     <link rel="shortcut icon" href="../favicon.ico">
 
 
-    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
-    <link href="../Style/ks.css" rel="stylesheet" type="text/css" />
-    <link href="../Style/StudentStyle.css" rel="stylesheet"  />
+    <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
+    <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css" />
+    <link href="../themes/Style/StudentStyle.css" rel="stylesheet"  />
 
-    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="../Script/Common.js" type="text/javascript"></script>
-    <script src="../Script/Data.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../themes/Script/Common.js" type="text/javascript"></script>
+    <script src="../themes/Script/Data.js" type="text/javascript"></script>
 
 </head>
 <body class="style-3">
@@ -28,7 +26,7 @@
         <div class="page">
             <div id="logo">
                 <a href="">
-                    <img src="../images/yf/yfschool.jpg" alt="" width="160" height="70" />
+                    <img src="../themes/images/yf/yfschool.jpg" alt="" width="160" height="70" />
                 </a>
             </div>
             <div class="topxx">
@@ -147,7 +145,7 @@
                         <td align="right">性别:</td>
                         <td><?php echo $_SESSION['sgender']?></td>
                         <td align="right">其他:</td>
-                        <td></td>
+                        <td><?php echo $_SESSION['pageSize']?></td>
                     </tr>
                     <tr>
                         <td align="right">电子邮箱：</td>
@@ -176,10 +174,7 @@
     </script>
     
     <div class="footer">
-        <p>
-            <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
-                                                  title="YF course">徐汇区逸夫小学</a></small>
-        </p>
+        <?php include_once("../controller/functions.php");displayFooter() ?>
     </div>
 </div>
 </body>

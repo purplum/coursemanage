@@ -48,6 +48,8 @@ CREATE TABLE `course` (
   `cmax` int(20) default NULL,
   `cxueshi` int(5) default NULL,
   `ccurrent` int(20) default NULL,
+  `clocation` varchar(30) default NULL,
+  `callowgrade` varchar(20) default '0',
   PRIMARY KEY  (`cid`),
   KEY `cteacher` (`cteacher`),
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`cteacher`) REFERENCES `teacher` (`tid`)
@@ -56,7 +58,8 @@ CREATE TABLE `course` (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
-INSERT INTO `course` VALUES ('1', '美术课', '1', '2019', '40', '4', '1');
+INSERT INTO `course` VALUES ('1', '美术课', '1', '2019', '40', '4', '1','shanghai luoxiulu','0');
+INSERT INTO `course` VALUES ('2', '手工课', '1', '2019', '2', '21', '0','shanghai luoxiulu 2','3');
 
 -- ----------------------------
 -- Table structure for student
@@ -74,13 +77,16 @@ CREATE TABLE `student` (
   `semail` varchar(255) default NULL,
   `stel` varchar(255) default NULL,
   `saddress` varchar(255) default NULL,
+  `isspecial` varchar(10) default '0',
+  `specialreason` varchar(50) default NULL,
   PRIMARY KEY  (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2018','3','男','admin@tanpeng.net', '13167422813', 'aaaaas');
+INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2018','3','male','admin@test.net', '13167422813', 'aaaaas','0','a');
+INSERT INTO `student` VALUES ('2', '测试账号2','20002', '2','1', '2018','2','female','admin@test.net', '13167422814', 'aaaaas2','1','已加入特殊名单，不能选课');
 
 -- ----------------------------
 -- Table structure for teacher
@@ -96,4 +102,4 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', 'jiaoshi1', '1');
+INSERT INTO `teacher` VALUES ('1', '管理员', '1');

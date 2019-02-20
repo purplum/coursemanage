@@ -86,7 +86,7 @@ div.jbox .jbox-bottom-text {
 
 /*div.jbox .jbox-button{background:url(images/jbox-button2.png) repeat-x transparent;border:#AAAAAA 1px solid;color:#888888;border-radius:3px 3px 3px 3px;margin:1px 7px 0px 0px;height:22px;cursor:default;}*/
 div.jbox .jbox-button {
-    background: url(../../../../Images/btn_bgs.gif) repeat-x scroll 0 -5px;
+    background: url(../../../../images/btn_bgs.gif) repeat-x scroll 0 -5px;
     padding: 0px 14px 0px 13px;
     margin: 2px;
     overflow: visible;
