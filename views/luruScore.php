@@ -6,17 +6,17 @@
     <title>
         网上选课系统-老师端首页
     </title>
-    <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
+    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../Script/Common.js" type="text/javascript"></script>
+    <script src="../Script/Data.js" type="text/javascript"></script>
 
-    <script src="Script/changeOption.js" type="text/javascript"></script>
-    <script src="Script/rl.js" type="text/javascript"></script>
+    <script src="../Script/changeOption.js" type="text/javascript"></script>
+    <script src="../Script/rl.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
         <div class="page">
             <div id="logo">
                 <a href="index2.php">
-                    <img src="images/banner.jpg" alt="" width="160" height="50"/>
+                    <img src="../images/banner.jpg" alt="" width="160" height="50"/>
                 </a>
             </div>
             <div class="topxx">
@@ -41,8 +41,8 @@
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
                     <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="myCoursesCore.php">课程</a></li>
-                    <li><a href="score.php">成绩录入</a></li>
+                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
+                    <li><a href="../actions/score.php">成绩录入</a></li>
                 </ul>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="score.php">成绩录入</a></div>
+                        <a href="../actions/score.php">成绩录入</a></div>
                 </div>
                 <div class="ta1">
                     <a href="#"
@@ -102,7 +102,7 @@
 
             </div>
             <div class="cztable">
-                <form action="luruScoreMySQL.php" method="post">
+                <form action="../actions/luruScoreMySQL.php" method="post">
                     <table width="100%" cellpadding="0" cellspacing="0">
                         <?php if (!empty($_SESSION['chengji'])) { ?>
                             <?php foreach ($_SESSION['chengji'] as $row) { ?>

@@ -5,19 +5,19 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>
-        网上选课系统-首页
+        徐汇区逸夫小学俱乐部报名系统-首页
     </title>
-    <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
+    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../Script/Common.js" type="text/javascript"></script>
+    <script src="../Script/Data.js" type="text/javascript"></script>
 
-    <script src="Script/changeOption.js" type="text/javascript"></script>
-    <script src="Script/rl.js" type="text/javascript"></script>
+    <script src="../Script/changeOption.js" type="text/javascript"></script>
+    <script src="../Script/rl.js" type="text/javascript"></script>
 </head>
 <body class="style-3">
 
@@ -27,21 +27,21 @@
         <div class="page">
             <div id="logo">
                 <a href="index2.php">
-                    <img src="images/banner.jpg" alt="" width="160" height="50" />
+                    <img src="../images/yf/yfschool.jpg" alt="" width="160" height="70" />
                 </a>
             </div>
             <div class="topxx">
 
                 <?php session_start(); $sid = $_SESSION['studentid'];echo $sid ?>学员：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
-                <a href="#">密码修改</a>
                 <a href="logout.php">安全退出</a>
             </div>
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
+                    <li><a href="#">首页</a></li>
                     <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="myCoursesCore.php">课程</a></li>
-                    <li><a href="chooseCourseCore.php">选课</a></li>
-                    <li><a href="score.php">成绩</a></li>
+                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
+                    <li><a href="../actions/chooseCourseCore.php">选课</a></li>
+                    <li><a href="../actions/score.php">成绩</a></li>
                 </ul>
             </div>
         </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="myCoursesCore.php">我的课程</a></div>
+                        <a href="../actions/myCoursesCore.php">我的课程</a></div>
                 </div>
                 <div class="ta1">
                     <strong>选课</strong>
@@ -79,9 +79,9 @@
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="chooseCourseCore.php">在线选课</a></div>
+                        <a href="../actions/chooseCourseCore.php">在线选课</a></div>
                     <div>
-                        <a href="DelmyCoursesCore_Bef.php">在线退课</a></div>
+                        <a href="../actions/DelmyCoursesCore_Bef.php">在线退课</a></div>
                 </div>
 
                 <div class="ta1">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="score.php">成绩查询</a></div>
+                        <a href="../actions/score.php">成绩查询</a></div>
                 </div>
                 <div class="ta1">
                     <a href="#"
@@ -104,10 +104,11 @@
         <div class="rightbox">
 
             <h2 class="mbx">
-                网上选课系统&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                徐汇区逸夫小学俱乐部报名系统&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 
             <div class="dhbg" style="align-content: center;">
-                欢迎使用网上选课系统
+                欢迎使用徐汇区逸夫小学俱乐部报名系统&nbsp;&nbsp;
+                报名注意事项
             </div>
 
 
@@ -115,8 +116,8 @@
     </div>
     <div class="footer">
         <p>
-            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
-                                                            title="YF course">xxx</a></small>
+            <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
+                                                  title="YF course">徐汇区逸夫小学</a></small>
         </p>
     </div>
 </div>

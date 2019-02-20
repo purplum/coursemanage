@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>登录</title>
+    <?php include_once("controller/functions.php");displayTitle('登录') ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FreeHTML5.co"/>
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <ul class="menu">
-               <span style="font-family: 微软雅黑;font-size: 22px;font-weight:bold;">徐汇区逸夫小学俱乐部报名系统</span>
+                <?php include_once("controller/functions.php");displayHeader() ?>
             </ul>
         </div>
     </div>
@@ -68,11 +68,11 @@
         <div class="col-md-4 col-md-push-5">
             
             <!-- Start Sign In Form -->
-            <form method="post" action="logincheck.php" class="fh5co-form animate-box" data-animate-effect="fadeInRight" onsubmit="return checklogin()">
+            <form method="post" action="actions/logincheck.php" class="fh5co-form animate-box" data-animate-effect="fadeInRight" onsubmit="return checklogin()">
                 <h2>用户登录</h2>
                 <div class="form-group">
                     <label for="username" class="">身份证号码</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="输入身份证号以登录" autocomplete="off">
                 </div>
 <!--                <div class="form-group">-->
 <!--                    <label for="password" class="">密码</label>-->
@@ -97,7 +97,7 @@
                     <label for="remember"><input type="checkbox" id="remember"> Remember Me</label>
                 </div>
                 <div class="form-group">
-                    <p>没有帐号？ <a href="sign-up.php">注册</a>&nbsp;
+                    <p>没有帐号？ <a href="views/sign-up.php">注册</a>&nbsp;
                     </p>
                 </div>
                 <div class="form-group">
@@ -110,10 +110,7 @@
     </div>
     <div class="row" style="padding-top: 60px; clear: both;">
         <div class="col-md-12 text-center">
-            <p>
-                <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
-                                                                title="YF course">徐汇区逸夫小学</a></small>
-            </p>
+            <?php include_once("controller/functions.php");displayFooter() ?>
         </div>
     </div>
 </div>

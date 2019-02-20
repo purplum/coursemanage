@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>登录验证</title>
-    <script src="layer/layer.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="../layer/layer.js"></script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
 
 </head>
 <body>
@@ -19,30 +19,31 @@
     echo $name;
     parse_str($name, $data);
     var_export($data);
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
     /*$rs = $db->query('select * from student');
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
     $personid = $data['username'];
     $shenfen = $data['shenfen'];
-    $password = $data['password'];
-    $yzm = $data['yzm'];
+//    $password = $data['password'];
+//    $yzm = $data['yzm'];
     echo "xxx" . $_SESSION["helloweba_num"];
-    echo "yzm=" . $yzm;
-    if ($_SESSION["helloweba_num"] != $yzm) {
-        echo "<script>";
-        echo "alert(\"验证码输入有误，请重新登录\");";
-        echo "location.href=\"login.php\"";
-        echo "</script>";
-    }
+//    echo "yzm=" . $yzm;
+//    if ($_SESSION["helloweba_num"] != $yzm) {
+//        echo "<script>";
+//        echo "alert(\"验证码输入有误，请重新登录\");";
+//        echo "location.href=\"login.php\"";
+//        echo "</script>";
+//    }
     if ($shenfen == "student") {
-        $rs = $db->query("select * from student WHERE spersonid='$personid' and spassword='$password'");
+//        $rs = $db->query("select * from student WHERE spersonid='$personid' and spassword='$password'");
+        $rs = $db->query("select * from student WHERE spersonid='$personid'");
         $num_rows = $rs->rowCount();
         if ($num_rows > 0) {
             echo "登录成功";
             session_start();
-            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress from student WHERE spersonid = '$personid'");
+            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress,sgender from student WHERE spersonid = '$personid'");
             $jieguo = $rs2->fetch();
             $sid = $jieguo['sid'];
             $xingming = $jieguo['sname'];
@@ -52,6 +53,7 @@
             $email = $jieguo['semail'];
             $stel = $jieguo['stel'];
             $saddress = $jieguo['saddress'];
+            $sgender = $jieguo['sgender'];
             $_SESSION['sid'] = $sid;
             $_SESSION['studentid'] = $studentid;
             $_SESSION['personid'] = $personid;
@@ -61,11 +63,12 @@
             $_SESSION['email'] = $email;
             $_SESSION['stel'] = $stel;
             $_SESSION['saddress'] = $saddress;
-            header('location:index2.php');
+            $_SESSION['sgender'] = $sgender;
+            header('location:../views/index2.php');
         } else {
             echo "<script>";
-            echo "alert(\"错误的用户名或者密码，请重新登录\");";
-            echo "location.href=\"login.php\"";
+            echo "alert(\"错误的身份证号码，请重新登录\");";
+            echo "location.href=\"../login.php\"";
             echo "</script>";
         }
     }else{
@@ -82,11 +85,11 @@
             echo "tid=".$username;
             $_SESSION['tname'] = $xingming;
 
-            header('location:teacherMain.php');
+            header('location:../views/teacherMain.php');
         } else {
             echo "<script>";
             echo "alert(\"错误的用户名或者密码，请重新登录\");";
-            echo "location.href=\"login.php\"";
+            echo "location.href=\"../login.php\"";
             echo "</script>";
         }
     }

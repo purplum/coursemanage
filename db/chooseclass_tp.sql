@@ -70,6 +70,7 @@ CREATE TABLE `student` (
   `spassword` varchar(50) default NULL,
   `sgrade` varchar(20) default NULL,
   `sclass` varchar(20) default NULL,
+  `sgender` varchar(20) default NULL,
   `semail` varchar(255) default NULL,
   `stel` varchar(255) default NULL,
   `saddress` varchar(255) default NULL,
@@ -79,7 +80,7 @@ CREATE TABLE `student` (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2','3','admin@tanpeng.net', '13167422813', 'aaaaas');
+INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2018','3','男','admin@tanpeng.net', '13167422813', 'aaaaas');
 
 -- ----------------------------
 -- Table structure for teacher

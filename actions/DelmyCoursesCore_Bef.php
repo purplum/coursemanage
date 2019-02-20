@@ -10,7 +10,7 @@
      echo $name;
      parse_str($name, $data);
      var_export($data);*/
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
     $sid = $_SESSION['xuehao'];
@@ -40,4 +40,4 @@
     }*/
 
     $_SESSION['$myCourses'] = $myCourses;
-    header('location:DelmyCourses.php');
+    header('location:../views/DelmyCourses.php');

@@ -9,7 +9,7 @@
     session_start();
     $sid = $_SESSION['xuehao'];
     //echo "sid".$sid;
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
     $cou = $db->query("select cid,cscore from cc WHERE sid = $sid ");

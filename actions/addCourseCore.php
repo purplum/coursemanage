@@ -10,7 +10,7 @@
     echo $name;
     parse_str($name, $data);
     var_export($data);
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
     /*$rs = $db->query('select * from student');
@@ -31,7 +31,7 @@
     if ($n > 0) {
         echo "<script>";
         echo "alert(\"新增成功！\");";
-        echo "location.href=\"teacherMain.php\"";
+        echo "location.href=\"../views/teacherMain.php\"";
         echo "</script>";
     } else {
         echo "<script>";

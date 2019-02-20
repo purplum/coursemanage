@@ -8,7 +8,7 @@
     echo "cid=".$cid;
     $sid = $_GET['sid'];
     echo "sid=".$sid;
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
 
@@ -17,16 +17,16 @@
     if ($num_rows > 0) {
         echo "<script>";
         echo "alert(\"重复选课! 请重新选择\");";
-        echo "location.href=\"chooseCourse.php\"";
+        echo "location.href=\"../views/chooseCourse.php\"";
         echo "</script>";
     } else {
         $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
-        $db->query("update course set course.ccurrent+1 WHERE cid=$cid");
+        $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
 
         if((int)$n>0){
             echo "<script>";
-            echo "alert(\"选课成功!\");";
-            echo "location.href=\"myCourses.php\"";
+            echo "alert(\"选课成功, 请刷新页面查看选课结果!\");";
+            echo "location.href=\"../views/myCourses.php\"";
             echo "</script>";
         }else{
             echo "选课失败！";

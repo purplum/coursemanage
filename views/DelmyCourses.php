@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['username'] = '谭鹏';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,14 +9,14 @@ $_SESSION['username'] = '谭鹏';
     <title>
         学生信息管理平台
     </title>
-    <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
+    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../Script/Common.js" type="text/javascript"></script>
+    <script src="../Script/Data.js" type="text/javascript"></script>
     <script type="text/javascript">
 
     </script>
@@ -33,7 +32,7 @@ $_SESSION['username'] = '谭鹏';
         <div class="page">
             <div id="logo">
                 <a href="Index.aspx.html">
-                    <img src="images/banner.jpg" alt="" width="160" height="50" />
+                    <img src="../images/banner.jpg" alt="" width="160" height="50" />
                 </a>
             </div>
             <div class="topxx">
@@ -45,9 +44,9 @@ $_SESSION['username'] = '谭鹏';
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
                     <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="myCoursesCore.php">课程</a></li>
-                    <li><a href="chooseCourseCore.php">选课</a></li>
-                    <li><a href="score.php">成绩</a></li>
+                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
+                    <li><a href="../actions/chooseCourseCore.php">选课</a></li>
+                    <li><a href="../actions/score.php">成绩</a></li>
                 </ul>
             </div>
         </div>
@@ -77,7 +76,7 @@ $_SESSION['username'] = '谭鹏';
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="myCoursesCore.php">我的课程</a></div>
+                        <a href="../actions/myCoursesCore.php">我的课程</a></div>
                 </div>
                 <div class="ta1">
                     <strong>选课</strong>
@@ -86,9 +85,9 @@ $_SESSION['username'] = '谭鹏';
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="chooseCourseCore.php">在线选课</a></div>
+                        <a href="../actions/chooseCourseCore.php">在线选课</a></div>
                     <div>
-                        <a href="DelmyCoursesCore_Bef.php">在线退课</a></div>
+                        <a href="../actions/DelmyCoursesCore_Bef.php">在线退课</a></div>
                 </div>
 
                 <div class="ta1">
@@ -98,7 +97,7 @@ $_SESSION['username'] = '谭鹏';
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="score.php">成绩查询</a></div>
+                        <a href="../actions/score.php">成绩查询</a></div>
                 </div>
                 <div class="ta1">
                     <a href="#"
@@ -163,7 +162,7 @@ $_SESSION['username'] = '谭鹏';
                                 <td>
                                     <?php
                                     $tid = $row['cteacher'];
-                                    include("db/db_properties.php");
+                                    include("../db/db_properties.php");
                                     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
                                     $db->query('set names utf8');
                                     $rs = $db->query("select tname from teacher where tid = '$tid'");
@@ -191,7 +190,7 @@ $_SESSION['username'] = '谭鹏';
                                     <?php echo $row['cdep'] ?>
                                 </td>
                                 <td>
-                                    <a href="DelMyCoursesCore.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['xuehao'] ?>">退选</a>
+                                    <a href="../actions/DelMyCoursesCore.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['xuehao'] ?>">退选</a>
                                 </td>
                             </tr>
                         <?php } ?>

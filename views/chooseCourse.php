@@ -8,16 +8,16 @@ session_start();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>
-        网上选课系统
+        徐汇区逸夫小学俱乐部报名系统
     </title>
-    <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
+    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../Script/Common.js" type="text/javascript"></script>
+    <script src="../Script/Data.js" type="text/javascript"></script>
     <script type="text/javascript">
 
     </script>
@@ -32,8 +32,8 @@ session_start();
     <div class="bgh">
         <div class="page">
             <div id="logo">
-                <a href="Index.aspx.html">
-                    <img src="images/banner.jpg" alt="" width="160" height="50" />
+                <a href="">
+                    <img src="../images/yf/yfschool.jpg" alt="" width="160" height="70" />
                 </a>
             </div>
             <div class="topxx">
@@ -45,9 +45,9 @@ session_start();
             <div class="blog_nav" style="margin-top: 40px;">
                 <ul>
                     <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="myCoursesCore.php">课程</a></li>
-                    <li><a href="chooseCourseCore.php">选课</a></li>
-                    <li><a href="score.php">成绩</a></li>
+                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
+                    <li><a href="../actions/chooseCourseCore.php">选课</a></li>
+                    <li><a href="../actions/score.php">成绩</a></li>
                 </ul>
             </div>
         </div>
@@ -77,7 +77,7 @@ session_start();
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="myCoursesCore.php">我的课程</a></div>
+                        <a href="../actions/myCoursesCore.php">我的课程</a></div>
                 </div>
                 <div class="ta1">
                     <strong>选课</strong>
@@ -86,9 +86,9 @@ session_start();
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="chooseCourseCore.php">在线选课</a></div>
+                        <a href="../actions/chooseCourseCore.php">在线选课</a></div>
                     <div>
-                        <a href="DelmyCoursesCore_Bef.php">在线退课</a></div>
+                        <a href="../actions/DelmyCoursesCore_Bef.php">在线退课</a></div>
                 </div>
 
                 <div class="ta1">
@@ -98,7 +98,7 @@ session_start();
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="score.php">成绩查询</a></div>
+                        <a href="../actions/score.php">成绩查询</a></div>
                 </div>
                 <div class="ta1">
                     <a href="#"
@@ -154,7 +154,7 @@ session_start();
                                 <td>
                                     <?php
                                         $tid = $row['cteacher'];
-                                        include("db/db_properties.php");
+                                        include("../db/db_properties.php");
                                         $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
                                         $db->query('set names utf8');
                                         $rs = $db->query("select tname from teacher where tid = '$tid'");
@@ -173,7 +173,7 @@ session_start();
                                     <?php echo $row['cxueshi'] ?>
                                 </td>
                                 <td>
-                                    <a href="chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">选择</a>
+                                    <a href="../actions/chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">选择</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -186,18 +186,18 @@ session_start();
 
                 </table>
                 <div class='MainStyle'>
-                    <div class=''><a href='chooseCourseCore.php?page=1'
+                    <div class=''><a href='../actions/chooseCourseCore.php?page=1'
                                      target='_self'>首页</a></div>
-                    <div class=''><a href="chooseCourseCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
+                    <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
                                      target='_self'>上一页</a></div>
 
                     <?php for ($i = 1; $i <= $_SESSION['maxPage']; $i++) { ?>
-                        <div class=''><a href='chooseCourseCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
+                        <div class=''><a href='../actions/chooseCourseCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
                     <?php } ?>
 
-                    <div class=''><a href="chooseCourseCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
+                    <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
                                      target='_self'>下一页</a></div>
-                    <div class=''><a href="chooseCourseCore.php?page=<?php echo $_SESSION['maxPage'] ?> "
+                    <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo $_SESSION['maxPage'] ?> "
                                      target='_self'>尾页</a></div>
                     <div class=''>总共<b><?php echo $_SESSION['count'] ?></b>条数据</div>
                     <div class=''>每页<b><?php echo $_SESSION['pageSize'] ?></b>条数据</div>
@@ -224,8 +224,8 @@ session_start();
 
     <div class="footer">
         <p>
-            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
-                                                            title="YF course">xxx</a></small>
+            <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
+                                                  title="YF course">徐汇区逸夫小学</a></small>
         </p>
     </div>
 </div>

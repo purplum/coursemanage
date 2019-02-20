@@ -10,7 +10,7 @@
     echo $name;
     parse_str($name, $data);
     var_export($data);
-    include("db/db_properties.php");
+    include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
 
@@ -32,7 +32,7 @@
         $_SESSION['sdizhi'] = $sdizhi;
         echo "<script>";
         echo "alert(\"修改信息成功！\");";
-        echo "location.href=\"userinfo.php\"";
+        echo "location.href=\"../views/userinfo.php\"";
         echo "</script>";
     }else{
         echo "修改失败！";
