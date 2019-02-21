@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <?php include_once("controller/functions.php");displayTitle('登录') ?>
+    <?php include_once("controller/functions.php");displayTitle('后台') ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FreeHTML5.co"/>
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
@@ -60,52 +60,41 @@
     </div>
     <div class="row">
 
-        <div class="col-md-3 ">
-            <img src="themes/images/Always.jpg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
-        </div>
-
-
+        <?php include_once("controller/functions.php");displayAdminLoginImage() ?>
+        
+        
         <div class="col-md-4 col-md-push-5">
-
+            
             <!-- Start Sign In Form -->
             <form method="post" action="actions/logincheck.php" class="fh5co-form animate-box" data-animate-effect="fadeInRight" onsubmit="return checklogin()">
-                <h2>用户登录</h2>
+                <h2>管理员登录</h2>
                 <div class="form-group">
-                    <label for="username" class="">身份证号码</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="输入身份证号以登录" autocomplete="off">
+                    <label for="username" class="">管理员账号</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="输入账号以登录" autocomplete="off">
                 </div>
-                <!--                <div class="form-group">-->
-                <!--                    <label for="password" class="">密码</label>-->
-                <!--                    <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" onfocus="this.type='password'">-->
-                <!--                </div>-->
+                <div class="form-group">
+                    <label for="password" class="">密码</label>
+                    <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" onfocus="this.type='password'">
+                </div>
                 <div class="form-group">
                     <label for="shenfen" class="">选择身份：</label>
                     <select name="shenfen" size="1" style="margin-left: 0px;width: 100px;">
-                        <option value="student">学生</option>
-                        <option value="teacher">教师</option>
+                        <option value="teacher">管理员</option>
                     </select>
                 </div>
-                <!--                <div class="form-group">-->
-                <!--                    <span  class="">验证码：</span><br/>-->
-                <!--                    <input type="text" class="" id="yzm" name="yzm" placeholder="验证码" autocomplete="off" style="margin-left: 2px;width:110px; height:30px;margin-top: 16px;" >-->
-                <!---->
-                <!--                    <img id="captcha_img" border='1' src='captcha.php?r=echo rand();' style="width:100px; height:30px;margin-left: 15px;padding-top: -2px; " />-->
-                <!---->
-                <!--                    <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./captcha.php?r='+Math.random()" style="width:100px; height:30px;margin-left: 5px;">换一个</a>-->
-                <!--                </div>-->
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"> Remember Me</label>
                 </div>
                 <div class="form-group">
-                    <p>没有帐号？ <a href="views/sign-up.php">注册</a>&nbsp;
-                    </p>
+<!--                    <p>没有帐号？ <a href="views/sign-up.php">注册</a>&nbsp;-->
+<!--                    </p>-->
                 </div>
                 <div class="form-group">
                     <input type="submit" value="登录" class="btn btn-primary">
                 </div>
             </form>
             <!-- END Sign In Form -->
-
+            
         </div>
     </div>
     <div class="row" style="padding-top: 60px; clear: both;">
@@ -119,7 +108,7 @@
     function checklogin() {
         var name = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        var yzm = document.getElementById("yzm").value;
+        // var yzm = document.getElementById("yzm").value;
         if (name == "" || name.length == 0) {
             layer.alert("身份证号不能为空！");
             return false;
@@ -128,10 +117,10 @@
         //     layer.alert("身份证号错误！");
         //     return false;
         // }
-        // if(password ==""||password.length==0){
-        //     layer.alert("密码不能为空！");
-        //     return false;
-        // }
+        if(password ==""||password.length==0){
+            layer.alert("密码不能为空！");
+            return false;
+        }
         // if(yzm =="" ||yzm.length==0){
         //     layer.alert("请输入验证码！");
         //     return false;

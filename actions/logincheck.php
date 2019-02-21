@@ -10,10 +10,6 @@
 </head>
 <body>
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: Administrator
-     */
     session_start();
     $name = file_get_contents("php://input");
     echo $name;
@@ -26,9 +22,9 @@
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
     $personid = $data['username'];
     $shenfen = $data['shenfen'];
-//    $password = $data['password'];
+
 //    $yzm = $data['yzm'];
-    echo "xxx" . $_SESSION["helloweba_num"];
+//    echo "xxx" . $_SESSION["helloweba_num"];
 //    echo "yzm=" . $yzm;
 //    if ($_SESSION["helloweba_num"] != $yzm) {
 //        echo "<script>";
@@ -71,18 +67,19 @@
             echo "location.href=\"../login.php\"";
             echo "</script>";
         }
-    }else{
+    }else {
         echo "教师";
-        $rs = $db->query("select * from teacher WHERE tid='$username' and tpassword='$password'");
+        $password = $data['password'];
+        $rs = $db->query("select * from teacher WHERE tid='$personid' and tpassword='$password'");
         $num_rows = $rs->rowCount();
         if ($num_rows > 0) {
             echo "登录成功";
-            $rs2 = $db->query("select tname from teacher WHERE tid = '$username'");
+            $rs2 = $db->query("select tname from teacher WHERE tid = '$personid'");
             $jieguo = $rs2->fetch();
             $xingming = $jieguo['tname'];
 
-            $_SESSION['tid'] = $username;
-            echo "tid=".$username;
+            $_SESSION['tid'] = $personid;
+            echo "tid=".$personid;
             $_SESSION['tname'] = $xingming;
 
             header('location:../views/teacherMain.php');

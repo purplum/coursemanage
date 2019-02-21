@@ -27,7 +27,7 @@
             <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
-                <?php session_start(); $sid = $_SESSION['tid'];echo $sid ?>， <?php $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
+                <?php session_start(); $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
                 <a href="logout.php">安全退出</a>
             </div>
             <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>

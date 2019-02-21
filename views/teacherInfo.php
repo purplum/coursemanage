@@ -27,7 +27,7 @@
             <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
-                <?php session_start(); $sid = $_SESSION['tid'];echo $sid ?>， <?php $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
+                <?php session_start(); $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
                 <a href="logout.php">安全退出</a>
             </div>
             <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>
@@ -57,7 +57,6 @@
                         <td align="right" width="90">姓名：</td>
                         <td><?php echo $_SESSION['tname']?>&nbsp;</td>
 
-                        <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="images/<?php echo $_SESSION['stx'] ?>" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
                     </tr>
 
 

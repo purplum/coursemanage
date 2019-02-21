@@ -60,9 +60,7 @@
     </div>
     <div class="row">
 
-        <div class="col-md-3 ">
-            <img src="themes/images/Always.jpg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
-        </div>
+        <?php include_once("controller/functions.php");displayLoginImage() ?>
         
         
         <div class="col-md-4 col-md-push-5">
@@ -82,7 +80,7 @@
                     <label for="shenfen" class="">选择身份：</label>
                     <select name="shenfen" size="1" style="margin-left: 0px;width: 100px;">
                         <option value="student">学生</option>
-                        <option value="teacher">教师</option>
+<!--                        <option value="teacher">教师</option>-->
                     </select>
                 </div>
 <!--                <div class="form-group">-->
