@@ -32,11 +32,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../themes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../themes/css/animate.css">
+    <link rel="stylesheet" href="../themes/css/style.css">
     <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../layer/layer.js"></script>
+    <script src="../themes/layer/layer.js"></script>
 
     <!-- Modernizr JS -->
     <script src="../js/modernizr-2.6.2.min.js"></script>

@@ -7,17 +7,15 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>
-        网上选课系统
-    </title>
-    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="../Script/Common.js" type="text/javascript"></script>
-    <script src="../Script/Data.js" type="text/javascript"></script>
+    <?php include_once("../controller/functions.php");displayTitle('') ?>
+    <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../themes/Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../themes/Script/Common.js" type="text/javascript"></script>
+    <script src="../themes/Script/Data.js" type="text/javascript"></script>
     <script type="text/javascript">
 
     </script>
@@ -33,7 +31,7 @@ session_start();
         <div class="page">
             <div id="logo">
                 <a href="">
-                    <img src="../images/yf/yfschool.jpg" alt="" width="160" height="70" />
+                    <img src="../themes/images/yf/yfschool.jpg" alt="" width="160" height="70" />
                 </a>
             </div>
             <div class="topxx">
@@ -123,7 +121,7 @@ session_start();
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
                     <tr>
                         <th width="6%">课程号</th>
-                        <th style="padding-left: 20px;width: 15%;">
+                        <th style="padding-left: 20px;width: 10%;">
                             课程名称
                         </th>
                         <th style="width: 6%; text-align: center;">
@@ -137,6 +135,9 @@ session_start();
                         </th>
                         <th style="width: 5%; text-align: center;">
                             学时
+                        </th>
+                        <th style="width: 10%; text-align: center;">
+                            地点
                         </th>
 
                     </tr>
@@ -170,6 +171,9 @@ session_start();
                                 <td>
                                     <?php echo $row['cxueshi'] ?>
                                 </td>
+                                <td>
+                                    <?php echo $row['clocation'] ?>
+                                </td>
 
                             </tr>
                         <?php } ?>
@@ -196,10 +200,7 @@ session_start();
     </script>
 
     <div class="footer">
-        <p>
-            <small>&copy; All Rights Reserved. YF School <a href="http://localhost/ccm/login.php" target="_blank"
-                                                            title="YF course">xxx</a></small>
-        </p>
+        <?php include_once("../controller/functions.php");displayFooter() ?>
     </div>
 </div>
 </body>

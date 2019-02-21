@@ -7,17 +7,17 @@
     <title>
         网上选课系统
     </title>
-    <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="../Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
-    <link href="../Style/ks.css" rel="stylesheet" type="text/css"/>
-    <script src="../Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="../Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
-    <script src="../Script/Common.js" type="text/javascript"></script>
-    <script src="../Script/Data.js" type="text/javascript"></script>
+    <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
+    <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css"/>
+    <script src="../themes/Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+    <script src="../themes/Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
+    <script src="../themes/Script/Common.js" type="text/javascript"></script>
+    <script src="../themes/Script/Data.js" type="text/javascript"></script>
 
-    <script src="../Script/changeOption.js" type="text/javascript"></script>
-    <script src="../Script/rl.js" type="text/javascript"></script>
+    <script src="../themes/Script/changeOption.js" type="text/javascript"></script>
+    <script src="../themes/Script/rl.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
         <div class="page">
             <div id="logo">
                 <a href="index2.php">
-                    <img src="../images/banner.jpg" alt="" width="160" height="50" />
+                    <img src="../themes/images/banner.jpg" alt="" width="160" height="50" />
                 </a>
             </div>
             <div class="topxx">

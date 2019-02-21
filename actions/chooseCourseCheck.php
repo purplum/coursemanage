@@ -26,7 +26,7 @@
         if((int)$n>0){
             echo "<script>";
             echo "alert(\"选课成功, 请刷新页面查看选课结果!\");";
-            echo "location.href=\"../views/myCourses.php\"";
+            echo "location.href=\"../actions/myCoursesCore.php\"";
             echo "</script>";
         }else{
             echo "选课失败！";
