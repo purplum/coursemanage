@@ -61,8 +61,6 @@ function displayLeftBox() {
                 <div class="cdlist">
                     <div>
                         <a href="../views/userinfo.php">我的信息</a></div>
-                    <div>
-                        <a href="../views/changeInfo.php">修改信息</a></div>
                 </div>
                 <div class="ta1">
                     <strong>课程</strong>

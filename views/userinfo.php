@@ -56,13 +56,13 @@
                         <td align="right" width="90">学号：</td>
                         <td><?php echo $_SESSION['studentid']?>&nbsp;</td>
 
-                        <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="images/<?php echo $_SESSION['stx'] ?>" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
+<!--                        <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="images/--><?php //echo $_SESSION['stx'] ?><!--" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>-->
                     </tr>
 
-                    <tr>
-                        <td colspan="4" align="left">联系方式（如联系方式有变动请及时修改，以便能及时联系到你。谢谢！）</td>
-
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td colspan="4" align="left">联系方式（如联系方式有变动请及时修改，以便能及时联系到你。谢谢！）</td>-->
+<!---->
+<!--                    </tr>-->
                     <tr>
                         <td align="right">身份证号码：</td>
                         <td><?php echo $_SESSION['personid']?></td>
