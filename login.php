@@ -128,14 +128,14 @@
         //     layer.alert("身份证号错误！");
         //     return false;
         // }
-        if(password ==""||password.length==0){
-            layer.alert("密码不能为空！");
-            return false;
-        }
-        if(yzm =="" ||yzm.length==0){
-            layer.alert("请输入验证码！");
-            return false;
-        }
+        // if(password ==""||password.length==0){
+        //     layer.alert("密码不能为空！");
+        //     return false;
+        // }
+        // if(yzm =="" ||yzm.length==0){
+        //     layer.alert("请输入验证码！");
+        //     return false;
+        // }
         else {
             return true;
         }

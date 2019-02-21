@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <?php include_once("../controller/functions.php");displayTitle('登录') ?>
+    <?php include_once("../controller/functions.php");displayTitle('') ?>
 
     <link rel="shortcut icon" href="../favicon.ico">
 
@@ -24,82 +24,19 @@
 <div class="banner">
     <div class="bgh">
         <div class="page">
-            <div id="logo">
-                <a href="">
-                    <img src="../themes/images/yf/yfschool.jpg" alt="" width="160" height="70" />
-                </a>
-            </div>
+            <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
                 <?php session_start(); $sid = $_SESSION['studentid'];echo $sid ?>  学生：<?php $sid = $_SESSION['username'];echo $sid ?>，欢迎您！
                 <a href="logout.php">安全退出</a>
             </div>
-            <div class="blog_nav" style="margin-top: 40px;">
-                <ul>
-                    <li><a href="index2.php">首页</a></li>
-                    <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
-                    <li><a href="../actions/chooseCourseCore.php">选课</a></li>
-                    <li><a href="../actions/score.php">成绩</a></li>
-                </ul>
-            </div>
+            <?php include_once("../controller/functions.php");displayHeaderNavi() ?>
         </div>
     </div>
 </div>
 <div class="page">
     <div class="box mtop">
-        <div class="leftbox">
-            <div class="l_nav2">
-                <div class="ta1">
-                    <strong>个人中心</strong>
-                    <div class="leftbgbt">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="userinfo.php">我的信息</a></div>
-                    <div>
-                        <a href="changeInfo.php">修改信息</a></div>
-
-                </div>
-                <div class="ta1">
-                    <strong>课程</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/myCoursesCore.php">我的课程</a></div>
-                </div>
-                <div class="ta1">
-                    <strong>选课</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/chooseCourseCore.php">在线选课</a></div>
-                    <div>
-                        <a href="../actions/DelmyCoursesCore_Bef.php">在线退课</a></div>
-                </div>
-
-                <div class="ta1">
-                    <strong>成绩</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/score.php">成绩查询</a></div>
-                </div>
-                <div class="ta1">
-                    <a href="#"
-                       target="_blank"><strong>教学系统</strong></a>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include_once("../controller/functions.php");displayLeftBox() ?>
         <div class="rightbox">
 
             <h2 class="mbx">个人中心 &gt; 我的信息 &nbsp;&nbsp;&nbsp;</h2>

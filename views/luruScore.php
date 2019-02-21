@@ -24,11 +24,7 @@
 <div class="banner">
     <div class="bgh">
         <div class="page">
-            <div id="logo">
-                <a href="index2.php">
-                    <img src="../themes/images/banner.jpg" alt="" width="160" height="50"/>
-                </a>
-            </div>
+            <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
                 工号<?php session_start();
@@ -38,57 +34,13 @@
                 <a href="#">密码修改</a>
                 <a onclick="loginOut()" href="javascript:">安全退出</a>
             </div>
-            <div class="blog_nav" style="margin-top: 40px;">
-                <ul>
-                    <li><a href="userinfo.php">个人中心</a></li>
-                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
-                    <li><a href="../actions/score.php">成绩录入</a></li>
-                </ul>
-            </div>
+            <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>
         </div>
     </div>
 </div>
 <div class="page">
     <div class="box mtop">
-        <div class="leftbox">
-            <div class="l_nav2">
-                <div class="ta1">
-                    <strong>个人中心</strong>
-                    <div class="leftbgbt">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="teacherInfo.php">我的信息</a></div>
-                </div>
-                <div class="ta1">
-                    <strong>课程</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="addCourse.php">新增课程</a></div>
-                </div>
-
-
-                <div class="ta1">
-                    <strong>成绩</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/score.php">成绩录入</a></div>
-                </div>
-                <div class="ta1">
-                    <a href="#"
-                       target="_blank"><strong>教学系统</strong></a>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include_once("../controller/functions.php");displayTeacherLeftbox() ?>
 
         <div class="rightbox">
 
@@ -135,8 +87,7 @@
 
         </div>
         <div class="footer">
-            <p>
-                &copy;copyright 2017 tanpeng.net 版权所有 </p>
+            <?php include_once("../controller/functions.php");displayFooter() ?>
         </div>
     </div>
 

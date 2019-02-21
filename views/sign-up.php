@@ -10,7 +10,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>注册 徐汇区逸夫小学俱乐部报名系统</title>
+    <?php include_once("../controller/functions.php");displayTitle('') ?>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FreeHTML5.co"/>
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
@@ -156,10 +157,7 @@
     </div>
     <div class="row" style="padding-top: 60px; clear: both;">
         <div class="col-md-12 text-center">
-            <p>
-                <small>&copy; All Rights Reserved. <a href="http://yfxx.xhedu.sh.cn/" target="_blank"
-                                                      title="YF course">徐汇区逸夫小学</a></small>
-            </p>
+            <?php include_once("../controller/functions.php");displayFooter() ?>
         </div>
     </div>
 </div>
