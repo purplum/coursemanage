@@ -16,12 +16,6 @@ function displayLoginImage()
         </div>';
 }
 
-function displayAdminLoginImage()
-{
-    echo '<div class="col-md-3 ">
-            <img src="themes/images/admin.jpeg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
-        </div>';
-}
 
 function displayHeader()
 {
@@ -46,17 +40,6 @@ function displayHeaderNavi()
                     <li><a href="../actions/myCoursesCore.php">课程</a></li>
                     <li><a href="../actions/chooseCourseCore.php">选课</a></li>
                     <li><a href="../actions/score.php">成绩</a></li>
-                </ul>
-            </div>';
-}
-
-function displayTeacherHeaderNavi()
-{
-    echo '<div class="blog_nav" style="margin-top: 40px;">
-                <ul>
-                    <li><a href="../views/userinfo.php">个人中心</a></li>
-                    <li><a href="../actions/myCoursesCore.php">课程</a></li>
-                    <li><a href="../actions/score.php">成绩录入</a></li>
                 </ul>
             </div>';
 }
@@ -115,69 +98,6 @@ function displayLeftBox()
         </div>';
 }
 
-function displayTeacherLeftbox()
-{
-    echo '<div class="leftbox">
-            <div class="l_nav2">
-                <div class="ta1">
-                    <strong>课程</strong>
-                    <div class="leftbgbt">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/myCoursesCore.php">新增课程</a></div>
-                    <div>
-                        <a href="../actions/myCoursesCore.php">批量导入</a></div>
-                    <div>
-                        <a href="../actions/myCoursesCore.php">批量导出</a></div>
-                </div>
-
-                <div class="ta1">
-                    <strong>学生管理</strong>
-                    <div class="leftbgbt2"></div>
-                </div>
-                <div class="cdlist">
-                    <div><a href="../actions/score.php">选课规则</a></div>
-                    <div><a href="../actions/score.php">批量导入</a></div>
-                    <div><a href="../actions/score.php">批量导出</a></div>
-                </div>
-                
-                <div class="ta1">
-                    <strong>教师管理</strong>
-                    <div class="leftbgbt2"></div>
-                </div>
-                <div class="cdlist">
-                    <div><a href="../actions/score.php">新增教师</a></div>
-                </div>
-
-                <div class="ta1">
-                    <strong>成绩</strong>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="cdlist">
-                    <div>
-                        <a href="../actions/score.php">成绩录入</a></div>
-                </div>
-                <div class="ta1">
-                    <a href="#"
-                       target="_blank"><strong>教学系统</strong></a>
-                    <div class="leftbgbt2">
-                    </div>
-                </div>
-                <div class="ta1">
-                    <strong>后台管理</strong>
-                    <div class="leftbgbt2"></div>
-                </div>
-                <div class="cdlist">
-                    <div><a href="../actions/score.php">主题设置</a></div>
-                    <div><a href="../actions/score.php">首页设置</a></div>
-                    <div><a href="../actions/score.php">消息设置</a></div>
-                </div>
-            </div>
-        </div>';
-}
 
 function displayFooter()
 {

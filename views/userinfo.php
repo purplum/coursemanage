@@ -80,7 +80,7 @@
                     </tr>
                     <tr>
                         <td align="right">性别:</td>
-                        <td><?php echo $_SESSION['sgender']?></td>
+                        <td><?php if ($row['sgender']=='male') { echo '男'; } else { echo '女'; }  ?></td>
                         <td align="right">其他:</td>
                         <td><?php echo $_SESSION['pageSize']?></td>
                     </tr>
@@ -94,7 +94,7 @@
                         <td colspan="5" height="40">
                             <div align="center">
 
-                                <input type="button" id="button2" value="联系方式有修改" onclick="submitMail()" class="input2" />
+                                <input type="button" id="button2" value="修改" onclick="submitMail()" class="input2" />
                             </div>
                         </td>
                     </tr>

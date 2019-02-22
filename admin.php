@@ -60,7 +60,7 @@
     </div>
     <div class="row">
 
-        <?php include_once("controller/functions.php");displayAdminLoginImage() ?>
+        <?php include_once("controller/admin.php");displayAdminLoginImage() ?>
         
         
         <div class="col-md-4 col-md-push-5">

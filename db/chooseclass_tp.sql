@@ -50,6 +50,7 @@ CREATE TABLE `course` (
   `ccurrent` int(20) default NULL,
   `clocation` varchar(30) default NULL,
   `callowgrade` varchar(20) default '0',
+  `cvalid` int(5) default 0,
   PRIMARY KEY  (`cid`),
   KEY `cteacher` (`cteacher`),
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`cteacher`) REFERENCES `teacher` (`tid`)
@@ -58,8 +59,9 @@ CREATE TABLE `course` (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
-INSERT INTO `course` VALUES ('1', '美术课', '1', '2019', '40', '4', '1','shanghai luoxiulu','0');
-INSERT INTO `course` VALUES ('2', '手工课', '1', '2019', '2', '21', '0','shanghai luoxiulu 2','3');
+INSERT INTO `course` VALUES ('1', '美术课', '1', '2019', '40', '4', '1','shanghai luoxiulu','0','0');
+INSERT INTO `course` VALUES ('2', '手工课', '1', '2019', '2', '21', '0','shanghai luoxiulu 2','3','0');
+INSERT INTO `course` VALUES ('3', '陶艺课', '1', '2018', '5', '21', '0','shanghai luoxiulu 3','1','0');
 
 -- ----------------------------
 -- Table structure for student

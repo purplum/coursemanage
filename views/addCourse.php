@@ -26,16 +26,16 @@
             <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
-                <?php session_start(); $sid = $_SESSION['tid'];echo $sid ?>， <?php $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
-                <a href="logout.php">安全退出</a>
+                <?php session_start(); $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
+                <a href="adminlogout.php">安全退出</a>
             </div>
-            <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>
+            <?php include_once("../controller/admin.php");displayTeacherHeaderNavi() ?>
         </div>
     </div>
 </div>
 <div class="page">
     <div class="box mtop">
-        <?php include_once("../controller/functions.php");displayTeacherLeftbox() ?>
+        <?php include_once("../controller/admin.php");displayTeacherLeftbox() ?>
         <div class="rightbox">
 
             <h2 class="mbx">课程 &gt; 新增课程 &nbsp;&nbsp;&nbsp;</h2>

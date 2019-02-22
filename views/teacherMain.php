@@ -28,24 +28,22 @@
             <div class="topxx">
 
                 <?php session_start(); $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
-                <a href="logout.php">安全退出</a>
+                <a href="adminlogout.php">安全退出</a>
             </div>
-            <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>
+            <?php include_once("../controller/admin.php");displayTeacherHeaderNavi() ?>
         </div>
     </div>
 </div>
 <div class="page">
     <div class="box mtop">
-        <?php include_once("../controller/functions.php");displayTeacherLeftbox() ?>
+        <?php include_once("../controller/admin.php");displayTeacherLeftbox() ?>
 
         <div class="rightbox">
 
             <h2 class="mbx">
-                网上选课系统&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                <?php include_once("../controller/globals.php");echo ADMINWEBTITLE ?>&nbsp;&nbsp;&nbsp;</h2>
 
-            <div class="dhbg" style="align-content: center;">
-                欢迎使用网上选课系统
-            </div>
+            <?php include_once("../controller/admin.php");displayTeacherHomePage() ?>
 
 
         </div>
