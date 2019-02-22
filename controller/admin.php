@@ -21,8 +21,8 @@ function displayTeacherHeaderNavi()
     echo '<div class="blog_nav" style="margin-top: 40px;">
                 <ul>
                     <li><a href="../views/teacherMain.php">首页</a></li>
-                    <li><a href="../actions/myCoursesCore.php">课程相关</a></li>
-                    <li><a href="../actions/score.php">学生相关</a></li>
+                    <li><a href="../actions/courseListCore.php">课程相关</a></li>
+                    <li><a href="../actions/studentListCore.php">学生相关</a></li>
                 </ul>
             </div>';
 }
