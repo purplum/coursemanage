@@ -69,7 +69,7 @@ function displayTeacherLeftbox()
                     <div class="leftbgbt2"></div>
                 </div>
                 <div class="cdlist">
-                    <div><a href="../actions/score.php">新增教师</a></div>
+                    <div><a href="../views/addTeacher.php">新增教师</a></div>
                 </div>
 
                 <div class="ta1">
