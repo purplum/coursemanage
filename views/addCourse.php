@@ -43,7 +43,7 @@
 
 
                 <ul id="ulStudMsgHeadTab">
-                    <li><a class="tab2" onclick="" href="">个人资料</a> </li>
+                    <li><a class="tab2" onclick="" href="">课程信息</a> </li>
                 </ul>
 
             </div>
@@ -55,28 +55,70 @@
                             <td align="left" width="160px;"><input type="text" name="cname"/></td>
                         </tr>
                         <tr>
-                            <td align="right" width="80">上课时间：</td>
-                            <td align="left" width="160px;"><input type="text" name="ctime"/></td>
+                            <td align="right" width="80">课程老师：</td>
+                            <td align="left" width="160px;">
+                            <select class="form-control" name="cteacher" id="cteacher">
+                                <option></option>
+                            <?php
+                                include("../db/db_properties.php");
+                                $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
+                                $db->query('set names utf8');
+                                $rs = $db->query("select * from teacher ");
+                                $teachers = $rs->fetchAll();
+                                foreach ($teachers as $teacher){
+                                    echo '<option value=' . $teacher['tid'] . '>' . $teacher['tname'] . '</option>';
+                                }
+                            ?>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="right" width="80">所属系：</td>
-                            <td align="left" width="160px;"><input type="text" name="cdep"/></td>
+                            <td align="right" width="80">开课时间：</td>
+                            <td align="left" width="160px;">
+                            <select class="form-control" name="ctime" id="ctime">
+                                <option></option>
+                                <option>2021</option>
+                                <option>2020</option>
+                                <option>2019</option>
+                                <option>2018</option>
+                                <option>2017</option>
+                                <option>2016</option>
+                            </select>
+                            </td>
                         </tr>
                         <tr>
                             <td align="right" width="80">最大人数：</td>
                             <td align="left" width="160px;"><input type="text" name="cmax"/></td>
                         </tr>
                         <tr>
-                            <td align="right" width="80">学分：</td>
-                            <td align="left" width="160px;"><input type="text" name="cxuefen"/></td>
-                        </tr>
-                        <tr>
                             <td align="right" width="80">学时：</td>
                             <td align="left" width="160px;"><input type="text" name="cxueshi"/></td>
                         </tr>
                         <tr>
+                            <td align="right" width="80">可选年级：</td>
+                            <td align="left" width="160px;">
+                            <select class="form-control" name="callowgrade" id="callowgrade">
+                                <option></option>
+                                <option value='0'>全部</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
                             <td align="right" width="80">上课地点：</td>
-                            <td align="left" width="160px;"><input type="text" name="cdidian"/></td>
+                            <td align="left" width="160px;"><input type="text" name="clocation"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right" width="80">课程有效 (课程是否可发布)：</td>
+                            <td align="left" width="160px;">
+                            <select class="form-control" name="cvalid" id="cvalid">
+                                <option value='0'>是</option>
+                                <option value='1'>否</option>
+                            </select>
+                            </td>
                         </tr>
                         <tr>
 

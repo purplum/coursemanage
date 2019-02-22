@@ -42,4 +42,4 @@
     $_SESSION['page'] = $page;
     $_SESSION['count'] = $count;
     $_SESSION['pageSize'] = $pageSize;
-    header('location:../views/chooseCourse.php');
+    header('location:../action/chooseCourse.php');

@@ -17,21 +17,21 @@
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
 
     $cname = empty($data['cname'])?"":$data['cname'];
+    $cteacher = empty($data['cteacher'])?"":$data['cteacher'];
     $ctime = empty($data['ctime'])?"":$data['ctime'];
-    $cteacher = empty($_SESSION['tid'])?"":$_SESSION['tid'];
-    $cdep =empty( $data['cdep']?"": $data['cdep']);
     $cmax = empty($data['cmax'])?"":$data['cmax'];
-    $cxuefen =empty( $data['cxuefen'])?"": $data['cxuefen'];
     $cxueshi =empty( $data['cxueshi'])?"": $data['cxueshi'];
-    $cdidian = empty($data['cdidian'])?"":$data['cdidian'];
+    $callowgrade =empty( $data['callowgrade'])?"": $data['callowgrade'];
+    $clocation = empty($data['clocation'])?"":$data['clocation'];
+    $cvalid = empty($data['cvalid'])?"":$data['cvalid'];
 
     echo "cteacher=".$cteacher;
 
-    $n = $db->query("insert into course(cname,cteacher,ctime,cdep,cmax,cxuefen,cxueshi,cdidian) VALUES('$cname','$cteacher','$ctime','$cdep','$cmax','$cxuefen','$cxueshi','$cdidian')");
+    $n = $db->query("insert into course(cname,cteacher,ctime,cmax,cxueshi,callowgrade,clocation,cvalid) VALUES('$cname','$cteacher','$ctime','$cmax','$cxueshi','$callowgrade','$clocation','$cvalid')");
     if ($n > 0) {
         echo "<script>";
         echo "alert(\"新增成功！\");";
-        echo "location.href=\"../views/teacherMain.php\"";
+        echo "location.href=\"courseListCore.php\"";
         echo "</script>";
     } else {
         echo "<script>";
