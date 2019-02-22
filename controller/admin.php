@@ -60,7 +60,7 @@ function displayTeacherLeftbox()
                 </div>
                 <div class="cdlist">
                     <div><a href="../actions/score.php">选课规则</a></div>
-                    <div><a href="../actions/score.php">批量导入</a></div>
+                    <div><a href="../views/importStudents.php">批量导入</a></div>
                     <div><a href="../actions/score.php">批量导出</a></div>
                 </div>
                 
