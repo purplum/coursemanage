@@ -21,8 +21,9 @@ function displayTeacherHeaderNavi()
     echo '<div class="blog_nav" style="margin-top: 40px;">
                 <ul>
                     <li><a href="../views/teacherMain.php">首页</a></li>
-                    <li><a href="../actions/courseListCore.php">课程相关</a></li>
-                    <li><a href="../actions/studentListCore.php">学生相关</a></li>
+                    <li><a href="../actions/courseListCore.php">课程列表</a></li>
+                    <li><a href="../actions/studentListCore.php">学生列表</a></li>
+                    <li><a href="../actions/studentListCore.php">教师列表</a></li>
                 </ul>
             </div>';
 }
@@ -45,8 +46,6 @@ function displayTeacherLeftbox()
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="../actions/courseListCore.php">课程列表</a></div>
-                    <div>
                         <a href="../views/addCourse.php">新增课程</a></div>
                     <div>
                         <a href="../actions/myCoursesCore.php">批量导入</a></div>
@@ -59,7 +58,7 @@ function displayTeacherLeftbox()
                     <div class="leftbgbt2"></div>
                 </div>
                 <div class="cdlist">
-                    <div><a href="../actions/score.php">选课规则</a></div>
+                    <div><a href="../actions/specialStudentListCore.php">选课规则</a></div>
                     <div><a href="../views/importStudents.php">批量导入</a></div>
                     <div><a href="../actions/score.php">批量导出</a></div>
                 </div>

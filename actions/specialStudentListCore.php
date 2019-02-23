@@ -7,7 +7,7 @@
 
     $pageSize = 10;
 
-    $res = $db->query('SELECT count(*) FROM student');
+    $res = $db->query("SELECT count(*) FROM student WHERE isspecial='1' ");
 
     $res2 = $res->fetchall(PDO::FETCH_ASSOC);
     $count = 1;
@@ -23,7 +23,7 @@
     $page = $page<1?1:$page;
     $lim = ($page - 1) * $pageSize;
 
-    $rs = $db->query("select * from student LIMIT $lim,$pageSize");
+    $rs = $db->query("select * from student WHERE isspecial='1' LIMIT $lim,$pageSize");
     $allStudents = $rs->fetchall(PDO::FETCH_ASSOC);
 //    foreach ($allStudents as $row){
 //        echo $row['sname'];
@@ -33,4 +33,4 @@
     $_SESSION['page'] = $page;
     $_SESSION['count'] = $count;
     $_SESSION['pageSize'] = $pageSize;
-    header('location:../views/studentList.php');
+    header('location:../views/specialStudentList.php');

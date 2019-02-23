@@ -13,7 +13,7 @@
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
 
-    $filePath = $_FILES ['excel_file'] ['tmp_name']; //[文件名][临时路径-写死的]
+    $filePath = $_FILES ['excel_special_file'] ['tmp_name']; //[文件名][临时路径-写死的]
 	$PHPReader = new PHPExcel_Reader_Excel2007();
 	if(!$PHPReader->canRead($filePath)){
 	    $PHPReader = new PHPExcel_Reader_Excel5();
@@ -40,37 +40,24 @@
             $sheetData[$currentRow-2]=$rowData;
 
 
-
             $studentid=$rowData['A'];
             $studentname=$rowData['B'];
-            $studentgender=$rowData['C'];
-            if($rowData['C']=='男' || $rowData['C']=='男性') {
-                $studentgender = 'male';
-            } else if(($rowData['C']=='女' || $rowData['C']=='女性') ) {
-                $studentgender = 'female';
-            } else {
-                continue;
-            }
-            $studentpid=$rowData['D'];
+            $specialreason=$rowData['E'];
 
-            $rs_exist = $db->query("select * from student WHERE spersonid='$studentpid' ");
+            $rs_exist = $db->query("select * from student WHERE studentid='$studentid' ");
             $num_exists = $rs_exist->rowCount();
             if ($num_exists > 0) {
-                continue;
-            } else {
-                if(!empty($studentid)) {
-                    $n = $db->query("insert into student(sname,studentid,spersonid,sgender) VALUES('$studentname','$studentid','$studentpid','$studentgender')");
-                    if ($n > 0) {
-                        $records++;
-                    }
+                $n = $db->query("update student set isspecial='1',specialreason='$specialreason' WHERE studentid='$studentid' ");
+                if ($n > 0) {
+                    $records++;
                 }
+            } else {
+                continue;
+
             }
 
-
-
-//            print_r($rowData['A']);
+            //            print_r($rowData['A']);
 //            echo "<pre>";
-
         }
 
         $workbookData[$currentSheetIndex]=$sheetData;
@@ -84,15 +71,16 @@
 
 
 //    $n = $db->query("insert into student(sname,studentid,spersonid,sgender) VALUES('$cname','$cteacher','$ctime','$cmax')");
+
     if ($records > 0) {
         echo "<script>";
-        echo "alert(\"新增 [$records] 条记录成功 ！\");";
-        echo "location.href=\"../actions/studentListCore.php\"";
+        echo "alert(\"导入 [$records] 条记录成功 ！\");";
+        echo "location.href=../actions/specialStudentListCore.php";
         echo "</script>";
     } else {
         echo "<script>";
-        echo "alert(\"新增失败！\");";
-        echo "location.href=\"../actions/studentListCore.php\"";
+        echo "alert(\"导入失败！\");";
+        echo "location.href=../actions/specialStudentListCore.php";
         echo "</script>";
     }
 

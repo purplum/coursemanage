@@ -152,18 +152,18 @@ session_start();
 
                 </table>
                 <div class='MainStyle'>
-                    <div class=''><a href='../actions/studentListCore.php?page=1'
+                    <div class=''><a href='../actions/specialStudentListCore.php?page=1'
                                      target='_self'>首页</a></div>
-                    <div class=''><a href="../actions/studentListCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
+                    <div class=''><a href="../actions/specialStudentListCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
                                      target='_self'>上一页</a></div>
 
                     <?php for ($i = 1; $i <= $_SESSION['maxPage']; $i++) { ?>
-                        <div class=''><a href='../actions/studentListCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
+                        <div class=''><a href='../actions/specialStudentListCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
                     <?php } ?>
 
-                    <div class=''><a href="../actions/studentListCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
+                    <div class=''><a href="../actions/specialStudentListCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
                                      target='_self'>下一页</a></div>
-                    <div class=''><a href="../actions/studentListCore.php?page=<?php echo $_SESSION['maxPage'] ?> "
+                    <div class=''><a href="../actions/specialStudentListCore.php?page=<?php echo $_SESSION['maxPage'] ?> "
                                      target='_self'>尾页</a></div>
                     <div class=''>总共<b><?php echo $_SESSION['count'] ?></b>条数据</div>
                     <div class=''>每页<b><?php echo $_SESSION['pageSize'] ?></b>条数据</div>
@@ -185,7 +185,7 @@ session_start();
     <script>
         function gonewpage() {
             var page = document.getElementById("john_Page_Search").value;
-            location = "../actions/studentListCore.php?page=" + page;
+            location = "../actions/specialStudentListCore.php?page=" + page;
         }
     </script>
 

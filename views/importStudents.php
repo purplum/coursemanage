@@ -40,12 +40,9 @@
 
             <h2 class="mbx">学生 &gt; 导入学生 &nbsp;&nbsp;&nbsp;</h2>
             <div class="morebt">
-
-
                 <ul id="ulStudMsgHeadTab">
                     <li><a class="tab2" onclick="" href="">导入学生</a> </li>
                 </ul>
-
             </div>
             <div class="cztable">
                 <form action="../actions/addTeacherCore.php" method="post">
@@ -75,10 +72,30 @@
                     </table>
                 </form>
             </div>
-                <form action="../actions/importStudentCore.php" enctype="multipart/form-data" method="post">
-                    <input type="file" name="excel_file" class="input">
-                    <button class="btn btn-primary" type="submit">上传</button>
+            <form action="../actions/importStudentCore.php" enctype="multipart/form-data" method="post">
+                <input type="file" name="excel_file" class="input">
+                <button class="btn btn-primary" type="submit">上传</button>
+            </form>
+
+            <div class="morebt">
+                <ul id="ulStudMsgHeadTab">
+                    <li><a class="tab2" onclick="" href="">导入特殊学生</a> </li>
+                </ul>
+            </div>
+            <div class="cztable">
+                <form action="../actions/addTeacherCore.php" method="post">
+                    <table width="80%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="left" width="60%">表格数据起始行：</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
                 </form>
+            </div>
+            <form action="../actions/importSpecialStudentCore.php" enctype="multipart/form-data" method="post">
+                <input type="file" name="excel_special_file" class="input">
+                <button class="btn btn-primary" type="submit">上传</button>
+            </form>
 
 
         </div>

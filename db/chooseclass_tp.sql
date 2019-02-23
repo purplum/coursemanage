@@ -69,18 +69,18 @@ INSERT INTO `course` VALUES ('3', '陶艺课', '1', '2018', '5', '21', '0','shan
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `sid` int(11) NOT NULL auto_increment,
-  `sname` varchar(20) default NULL,
+  `sname` varchar(20) default '',
   `studentid` varchar(20) NOT NULL,
   `spersonid` varchar(20) NOT NULL,
-  `spassword` varchar(50) default NULL,
-  `sgrade` varchar(20) default NULL,
-  `sclass` varchar(20) default NULL,
-  `sgender` varchar(20) default NULL,
-  `semail` varchar(255) default NULL,
-  `stel` varchar(255) default NULL,
-  `saddress` varchar(255) default NULL,
+  `spassword` varchar(50) default '',
+  `sgrade` varchar(20) default '',
+  `sclass` varchar(20) default '',
+  `sgender` varchar(20) default '',
+  `semail` varchar(255) default '',
+  `stel` varchar(255) default '',
+  `saddress` varchar(255) default '',
   `isspecial` varchar(10) default '0',
-  `specialreason` varchar(50) default NULL,
+  `specialreason` varchar(50) default '',
   PRIMARY KEY  (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
