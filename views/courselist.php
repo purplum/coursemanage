@@ -89,8 +89,8 @@ session_start();
                         </th>
 
                     </tr>
-                    <?php if (!empty($_SESSION['$allCourses'])) { ?>
-                        <?php foreach ($_SESSION['$allCourses'] as $row) { ?>
+                    <?php if (!empty($_SESSION['allCourses'])) { ?>
+                        <?php foreach ($_SESSION['allCourses'] as $row) { ?>
                             <tr>
                                 <td class="xxleft">
                                     <?php echo $row['cid'] ?>

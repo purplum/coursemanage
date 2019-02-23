@@ -66,7 +66,7 @@ session_start();
                         <th style="width: 6%; text-align: center;">
                             学籍号
                         </th>
-                        <th style="width: 12%; text-align: center;">
+                        <th style="width: 14%; text-align: center;">
                             身份证号码
                         </th>
                         <th style="width: 5%; text-align: center;">
@@ -84,7 +84,7 @@ session_start();
                         <th style="width: 5%; text-align: center;">
                             电话
                         </th>
-                        <th style="width: 8%; text-align: center;">
+                        <th style="width: 5%; text-align: center;">
                             地址
                         </th>
                         <th style="width: 4%; text-align: center;">
@@ -131,14 +131,15 @@ session_start();
                                 <td>
                                     <?php if (empty($row['saddress'])) { echo ''; } else { echo $row['saddress']; } ?>
                                 </td>
-                                <td>
+                                <td id="td_isspecial" >
+<!--                                    <input type="text"  value=--><?php //if (empty($row['isspecial']) || $row['isspecial']=='0') { echo '否'; } else { echo '是'; }  ?><!-- />-->
                                     <?php if (empty($row['isspecial']) || $row['isspecial']=='0') { echo '否'; } else { echo '是'; }  ?>
                                 </td>
-                                <td>
+                                <td id="td_specialreason">
                                     <?php if (empty($row['specialreason'])) { echo ''; } else { echo $row['specialreason']; } ?>
                                 </td>
                                 <td>
-                                    <a href="../actions/chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">修改</a>
+                                    <a href="../actions/editStudentCore.php?spersonid=<?php echo $row['spersonid'] ?>&page=<?php echo $_SESSION['page'] ?>">修改</a>
                                 </td>
 
                             </tr>
@@ -152,14 +153,22 @@ session_start();
 
                 </table>
                 <div class='MainStyle'>
+                    <div class='SearchStyle'>
+                        <input type='text' id='grade_value' > 入学年 </input>
+                        <input type='text' id='class_value'> 班级 </input>
+                    </div>
+                    <div class=''>
+                        <input type='button' value='过滤' onclick="gonewpage()"/>
+                    </div>
+
                     <div class=''><a href='../actions/studentListCore.php?page=1'
                                      target='_self'>首页</a></div>
                     <div class=''><a href="../actions/studentListCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
                                      target='_self'>上一页</a></div>
 
-                    <?php for ($i = 1; $i <= $_SESSION['maxPage']; $i++) { ?>
-                        <div class=''><a href='../actions/studentListCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
-                    <?php } ?>
+<!--                    --><?php //for ($i = 1; $i <= $_SESSION['maxPage']; $i++) { ?>
+<!--                        <div class=''><a href='../actions/studentListCore.php?page=1' target='_self'>--><?php //echo $i; ?><!--</a></div>-->
+<!--                    --><?php //} ?>
 
                     <div class=''><a href="../actions/studentListCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
                                      target='_self'>下一页</a></div>
@@ -172,7 +181,7 @@ session_start();
                         <input type='text' id='john_Page_Search'/>
                     </div>
                     <div class=''>
-                        <input type='button' value='Go' onclick="gonewpage()"/>
+                        <input type='button' value='Go' onclick="gonewpage()" />
                     </div>
                 </div>
 
@@ -187,6 +196,13 @@ session_start();
             var page = document.getElementById("john_Page_Search").value;
             location = "../actions/studentListCore.php?page=" + page;
         }
+
+        // function edit_td() {
+        //     var new_isspecial = document.getElementById("td_isspecial").value;
+        //     var new_specialreason = document.getElementById("td_specialreason").value;
+        //     location = "../actions/editStudentCore.php?page=" + page +"&amp;isspecial="+new_isspecial+"&amp;reason="+new_specialreason;
+        // }
+
     </script>
 
     <div class="footer">

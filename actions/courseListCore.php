@@ -18,14 +18,6 @@
     $allCourses = array();
     $cou = $db->query("select * from course ");
     $allCourses = $cou->fetchAll();
-//    if(!empty($cour)){
-//        $allCourses[] = $cour[0];
-//    }
-    /*foreach ($myCourses as $row2) {
-        print_r($row2);
-        echo "<br/>";
-        echo "<br/>";
-    }*/
 
-    $_SESSION['$allCourses'] = $allCourses;
+    $_SESSION['allCourses'] = $allCourses;
     header('location:../views/courselist.php');
