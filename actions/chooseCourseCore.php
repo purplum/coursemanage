@@ -9,8 +9,9 @@
     $db->query('set names utf8');
 
     $pageSize = 10;
+    $current_year=date("Y");
     //查询所有记录的行数
-    $res = $db->query('SELECT count(*) FROM course');
+    $res = $db->query("SELECT count(*) FROM course WHERE ctime='$current_year' ");
 
     //print_r($res->fetchall(PDO::FETCH_ASSOC));
     $res2 = $res->fetchall(PDO::FETCH_ASSOC);
@@ -26,7 +27,7 @@
     $page = $page >$maxPage?$maxPage:$page;
     $page = $page<1?1:$page;
     $lim = ($page - 1) * $pageSize;
-    $rs = $db->query("select * from course LIMIT $lim,$pageSize");
+    $rs = $db->query("select * from course WHERE ctime='$current_year' LIMIT $lim,$pageSize");
     $courses = $rs->fetchall(PDO::FETCH_ASSOC);
     /*foreach ($courses as $row){
         echo $row['cname'];
