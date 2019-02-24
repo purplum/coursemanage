@@ -155,10 +155,9 @@ session_start();
                 <div class='MainStyle'>
                     <div class='SearchStyle'>
                         <input type='text' id='grade_value' > 入学年 </input>
-                        <input type='text' id='class_value'> 班级 </input>
                     </div>
                     <div class=''>
-                        <input type='button' value='过滤' onclick="gonewpage()"/>
+                        <input type='button' value='过滤' onclick="filterinfo()"/>
                     </div>
 
                     <div class=''><a href='../actions/studentListCore.php?page=1'
@@ -195,6 +194,12 @@ session_start();
         function gonewpage() {
             var page = document.getElementById("john_Page_Search").value;
             location = "../actions/studentListCore.php?page=" + page;
+        }
+
+        function filterinfo() {
+            var s_grade=document.getElementById("grade_value").value;
+
+            location = "../actions/studentListFilterCore.php?s_grade=" + s_grade;
         }
 
         // function edit_td() {
