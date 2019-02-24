@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+if(!isset($_SESSION['tid'])) {
+    echo "[Session timeout!]";
+    echo "<script>";
+    echo "alert(\"[Session timeout!] \");";
+    echo "location.href=\"../admin.php\"";
+    echo "</script>";
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
