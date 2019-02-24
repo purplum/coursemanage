@@ -45,12 +45,9 @@ function displayTeacherLeftbox()
                     </div>
                 </div>
                 <div class="cdlist">
-                    <div>
-                        <a href="../views/addCourse.php">新增课程</a></div>
-                    <div>
-                        <a href="../actions/myCoursesCore.php">批量导入</a></div>
-                    <div>
-                        <a href="../actions/myCoursesCore.php">批量导出</a></div>
+                    <div><a href="../views/addCourse.php">新增课程</a></div>
+                    <div><a href="#">批量导出</a></div>
+                    <div><a href="../actions/staticsCore.php">统计数据</a></div>
                 </div>
 
                 <div class="ta1">
@@ -60,7 +57,7 @@ function displayTeacherLeftbox()
                 <div class="cdlist">
                     <div><a href="../actions/specialStudentListCore.php">选课规则</a></div>
                     <div><a href="../views/importStudents.php">批量导入</a></div>
-                    <div><a href="../actions/score.php">批量导出</a></div>
+                    <div><a href="#">批量导出</a></div>
                 </div>
                 
                 <div class="ta1">

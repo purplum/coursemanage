@@ -138,7 +138,7 @@ session_start();
                                     <?php if (empty($row['specialreason'])) { echo ''; } else { echo $row['specialreason']; } ?>
                                 </td>
                                 <td>
-                                    <a href="../actions/chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">修改</a>
+                                    <a href="../actions/editStudentCore.php?spersonid=<?php echo $row['spersonid'] ?>&page=<?php echo $_SESSION['page'] ?>">修改</a>
                                 </td>
 
                             </tr>
