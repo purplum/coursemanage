@@ -23,7 +23,7 @@ function displayTeacherHeaderNavi()
                     <li><a href="../views/teacherMain.php">首页</a></li>
                     <li><a href="../actions/courseListCore.php">课程列表</a></li>
                     <li><a href="../actions/studentListCore.php">学生列表</a></li>
-                    <li><a href="../actions/studentListCore.php">教师列表</a></li>
+                    <li><a href="../actions/teacherListCore.php">教师列表</a></li>
                 </ul>
             </div>';
 }
@@ -75,7 +75,7 @@ function displayTeacherLeftbox()
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="../actions/score.php">成绩录入</a></div>
+                        <a href="#">成绩录入</a></div>
                 </div>
                 <div class="ta1">
                     <a href="#"
@@ -88,9 +88,9 @@ function displayTeacherLeftbox()
                     <div class="leftbgbt2"></div>
                 </div>
                 <div class="cdlist">
-                    <div><a href="../actions/score.php">主题设置</a></div>
-                    <div><a href="../actions/score.php">首页设置</a></div>
-                    <div><a href="../actions/score.php">消息设置</a></div>
+                    <div><a href="#">主题设置</a></div>
+                    <div><a href="#">首页设置</a></div>
+                    <div><a href="#">消息设置</a></div>
                 </div>
             </div>
         </div>';

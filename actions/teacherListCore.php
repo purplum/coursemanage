@@ -7,7 +7,7 @@
 
 $pageSize = 10;
 
-$res = $db->query('SELECT count(*) FROM course');
+$res = $db->query('SELECT count(*) FROM teacher');
 
 $res2 = $res->fetchall(PDO::FETCH_ASSOC);
 $count = 1;
@@ -23,25 +23,15 @@ $page = $page >$maxPage?$maxPage:$page;
 $page = $page<1?1:$page;
 $lim = ($page - 1) * $pageSize;
 
-//    $sid = $_SESSION['sid'];
-//    $rs = $db->query("select cid from cc ");
-//    $cids = $rs->fetchAll();
-//    $cidss = array();
-//    if(!empty($cids)){
-//        foreach ($cids as $row){
-//            $cidItem = $row['cid'];
-//            $cidss[] = $cidItem;
-//        }
-//    }
     $allCourses = array();
-    $cou = $db->query("select * from course LIMIT $lim,$pageSize");
+    $cou = $db->query("select * from teacher LIMIT $lim,$pageSize");
     $allCourses = $cou->fetchAll();
 
-    $_SESSION['allCourses'] = $allCourses;
+    $_SESSION['allTeachers'] = $allCourses;
 
 $_SESSION['maxPage'] = $maxPage;
 $_SESSION['page'] = $page;
 $_SESSION['count'] = $count;
 $_SESSION['pageSize'] = $pageSize;
 
-    header('location:../views/courselist.php');
+    header('location:../views/teacherList.php');

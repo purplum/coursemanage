@@ -47,12 +47,12 @@ session_start();
         <?php include_once("../controller/admin.php");displayTeacherLeftbox() ?>
         <div class="rightbox">
 
-            <h2 class="mbx">学生 &gt; 全部学生列表 &nbsp;&nbsp;&nbsp;</h2>
+            <h2 class="mbx">学生 &gt; 特殊学生列表 &nbsp;&nbsp;&nbsp;</h2>
             <div class="morebt">
 
 
                 <ul id="ulStudMsgHeadTab">
-                    <li><a class="tab2" onclick="" href="#">全部学生</a></li>
+                    <li><a class="tab2" onclick="" href="#">特殊学生</a></li>
                 </ul>
 
             </div>

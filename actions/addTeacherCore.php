@@ -22,7 +22,7 @@
     if ($n > 0) {
         echo "<script>";
         echo "alert(\"新增成功！\");";
-        echo "location.href=\"../views/addTeacher.php\"";
+        echo "location.href=\"../actions/teacherListCore.php\"";
         echo "</script>";
     } else {
         echo "<script>";
