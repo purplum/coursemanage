@@ -72,7 +72,7 @@ CREATE TABLE `student` (
   `sname` varchar(20) default '',
   `studentid` varchar(20) NOT NULL,
   `spersonid` varchar(20) NOT NULL,
-  `spassword` varchar(50) default '',
+  `spassword` varchar(50) default '1',
   `sgrade` varchar(20) default '',
   `sclass` varchar(20) default '',
   `sgender` varchar(20) default '',
@@ -81,14 +81,16 @@ CREATE TABLE `student` (
   `saddress` varchar(255) default '',
   `isspecial` varchar(10) default '0',
   `specialreason` varchar(50) default '',
+  `isreg` varchar(10) default '1', -- 0-已注册  1- 未注册
   PRIMARY KEY  (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2018','3','male','admin@test.net', '13167422813', 'aaaaas','0','a');
-INSERT INTO `student` VALUES ('2', '测试账号2','20002', '2','1', '2018','2','female','admin@test.net', '13167422814', 'aaaaas2','1','已加入特殊名单，不能选课');
+INSERT INTO `student` VALUES ('1', '测试账号1','20001', '1','1', '2018','3','male','admin@test.net', '13167422813', 'aaaaas','0','a','0');
+INSERT INTO `student` VALUES ('2', '测试账号2','20002', '2','1', '2018','2','female','admin2@test.net', '13167422814', 'aaaaas2','1','已加入特殊名单，不能选课','0');
+INSERT INTO `student` VALUES ('3', '测试账号3','20003', '3','1', '2018','2','female','admin3@test.net', '13167422815', 'aaaaas3','0','','0');
 
 -- ----------------------------
 -- Table structure for teacher
