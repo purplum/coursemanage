@@ -39,7 +39,6 @@ function displayHeaderNavi()
                     <li><a href="../views/userinfo.php">个人中心</a></li>
                     <li><a href="../actions/myCoursesCore.php">课程</a></li>
                     <li><a href="../actions/chooseCourseCore.php">选课</a></li>
-                    <li><a href="../actions/score.php">成绩</a></li>
                 </ul>
             </div>';
 }
@@ -86,13 +85,7 @@ function displayLeftBox()
                 </div>
                 <div class="cdlist">
                     <div>
-                        <a href="../actions/score.php">成绩查询</a></div>
-                </div>
-                <div class="ta1">
-                    <a href="#"
-                       target="_blank"><strong>教学系统</strong></a>
-                    <div class="leftbgbt2">
-                    </div>
+                        <a href="#">成绩查询</a></div>
                 </div>
             </div>
         </div>';

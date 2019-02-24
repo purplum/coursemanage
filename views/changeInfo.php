@@ -61,23 +61,29 @@
                             <td align="right" width="90">学号：</td>
                             <td><?php echo $_SESSION['studentid']?>&nbsp;</td>
 
-                            <td rowspan="4"><div align="center"><img id="pic_face"  height="160" width="120" src="Images/<?php echo $_SESSION['stx']?>" style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
                         </tr>
 
-                        <tr>
-                            <td colspan="4" align="left">联系方式（如联系方式有变动请及时修改，以便能及时联系到你。谢谢！）</td>
-
-                        </tr>
                         <tr>
                             <td align="right">身份证号码：</td>
-                            <td><input type="text" value="<?php echo $_SESSION['personid']?>" style="height: 25px;" name="personid"></td>
+                            <td><?php echo $_SESSION['personid']?></td>
                             <td align="right">手机号码：</td>
                             <td><input type="text" value="<?php echo $_SESSION['stel']?>" style="height: 25px;" name="stel"></td>
 
                         </tr>
                         <tr>
-                            <td align="right">年级:</td>
-                            <td><input type="text" value="<?php echo $_SESSION['sgrade']?>" style="height: 25px;" name="sgrade"></td>
+                            <td align="right">入学年份:</td>
+
+                            <td>
+                                <select class="form-control" name="sgrade" id="sgrade">
+                                    <option></option>
+                                    <option value ="2019" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2019') { echo "selected=true"; }   ?>>2019</option>
+                                    <option value ="2018" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2018') { echo "selected=true"; }   ?>>2018</option>
+                                    <option value ="2017" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2017') { echo "selected=true"; }   ?>>2017</option>
+                                    <option value ="2018" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2016') { echo "selected=true"; }   ?>>2016</option>
+                                    <option value ="2015" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2015') { echo "selected=true"; }   ?>>2015</option>
+                                    <option value ="2014" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2014') { echo "selected=true"; }   ?>>2014</option>
+                                </select>
+                            </td>
                             <td align="right">班级:</td>
                             <td><input type="text" value="<?php echo $_SESSION['sclass']?>" style="height: 25px;" name="sclass"></td>
 
@@ -94,8 +100,7 @@
                             <td colspan="5" height="40">
                                 <div align="center">
 
-                                    <input type="submit" id="button2" value="确认修改" onclick="submitMail()" class="input2" style="font-size: 17px;" />
-                                    <input type="reset" id="button2" value="重&nbsp;置" onclick="submitMail()" class="input2" style="margin-left: 20px; font-size: 17px;" />
+                                    <input type="submit" id="button2" value="确认修改" class="input2" style="font-size: 17px;" />
                                 </div>
                             </td>
                         </tr>
