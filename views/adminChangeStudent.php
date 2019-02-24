@@ -57,7 +57,7 @@ session_start();
 
             </div>
             <div class="cztable">
-                <form action="../actions/changeInfoCore.php" method="post">
+                <form action="../actions/adminChangeStudentCore.php" method="post">
                     <table width="100%" cellpadding="0" cellspacing="0">
                         <tr>
                             <td align="right" width="80">姓名：</td>
@@ -75,7 +75,13 @@ session_start();
                         </tr>
                         <tr>
                             <td align="right">是否特殊:</td>
-                            <td><input type="text" value="<?php $studentinfo=$_SESSION['studentinfo'][0]; echo $studentinfo['isspecial']?>" style="height: 25px;" name="isspecial"</td>
+
+                            <td>
+                                <select class="form-control" name="isspecial" >
+                                    <option value ="0" <?php $studentinfo=$_SESSION['studentinfo'][0]; if ($studentinfo['isspecial']=='0') { echo "selected=true"; }   ?>>否</option>
+                                    <option value ="1" <?php $studentinfo=$_SESSION['studentinfo'][0]; if ($studentinfo['isspecial']=='1') { echo "selected=true"; }   ?>>是</option>
+                                </select>
+                            </td>
                             <td align="right">特殊原因:</td>
                             <td><input type="text" value="<?php $studentinfo=$_SESSION['studentinfo'][0]; echo $studentinfo['specialreason']?>" style="height: 25px;" name="special_reason"</td>
 
@@ -84,9 +90,8 @@ session_start();
                             <td colspan="5" height="40">
                                 <div align="center">
 
-<!--                                    <input type="submit" id="button2" value="确认修改" onclick="submitMail()" class="input2" style="font-size: 17px;" />-->
-                                    <a href="../actions/chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">保存</a>
-                                    <a href="../actions/chooseCourseCheck.php?cid=<?php echo $row['cid'] ?>&sid=<?php echo $_SESSION['sid'] ?>">取消</a>
+                                    <input type="submit" id="button2" value="保存"  class="input2" style="font-size: 17px;" />
+<!--                                    <a href="../actions/chooseCourseCheck.php?cid=--><?php //echo $row['cid'] ?><!--&sid=--><?php //echo $_SESSION['sid'] ?><!--">取消</a>-->
                                 </div>
                             </td>
                         </tr>
