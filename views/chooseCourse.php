@@ -55,14 +55,14 @@ session_start();
             <div class="cztable">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
                     <tr>
-                        <th width="6%">课程号</th>
-                        <th style="padding-left: 20px;width: 10%;">
+                        <th width="4%">课程号</th>
+                        <th style="padding-left: 20px;width: 8%;">
                             课程名称
                         </th>
                         <th style="width: 6%; text-align: center;">
                             老师
                         </th>
-                        <th style="width: 9%; text-align: center;">
+                        <th style="width: 7%; text-align: center;">
                             开课时间
                         </th>
                         <th style="width: 9%; text-align: center;">
@@ -70,6 +70,9 @@ session_start();
                         </th>
                         <th style="width: 5%; text-align: center;">
                             学时
+                        </th>
+                        <th style="width: 5%; text-align: center;">
+                            可选年级
                         </th>
                         <th style="width: 10%; text-align: center;">
                             地点
@@ -107,6 +110,9 @@ session_start();
                                 </td>
                                 <td>
                                     <?php echo $row['cxueshi'] ?>
+                                </td>
+                                <td>
+                                    <?php if ($row['callowgrade']=='0') { echo '全部'; } else { echo $row['callowgrade']; }  ?>
                                 </td>
                                 <td>
                                     <?php echo $row['clocation'] ?>

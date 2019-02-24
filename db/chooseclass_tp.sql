@@ -50,7 +50,7 @@ CREATE TABLE `course` (
   `ccurrent` int(20) default '0',
   `clocation` varchar(30) default NULL,
   `callowgrade` int(11) default '0',
-  `cvalid` int(5) default 0,
+  `cvalid` int(5) default 0,   -- 0: valid
   PRIMARY KEY  (`cid`),
   KEY `cteacher` (`cteacher`),
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`cteacher`) REFERENCES `teacher` (`tid`)
