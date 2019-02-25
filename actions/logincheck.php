@@ -34,12 +34,12 @@
 //    }
     if ($shenfen == "student") {
 //        $rs = $db->query("select * from student WHERE spersonid='$personid' and spassword='$password'");
-        $rs = $db->query("select * from student WHERE spersonid='$personid'");
+        $rs = $db->query("select * from student WHERE spersonid='$personid' AND isreg='0' ");
         $num_rows = $rs->rowCount();
         if ($num_rows > 0) {
             echo "登录成功";
             session_start();
-            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress,sgender from student WHERE spersonid = '$personid'");
+            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress,sgender,isreg from student WHERE spersonid = '$personid'");
             $jieguo = $rs2->fetch();
             $sid = $jieguo['sid'];
             $xingming = $jieguo['sname'];
@@ -60,11 +60,12 @@
             $_SESSION['stel'] = $stel;
             $_SESSION['saddress'] = $saddress;
             $_SESSION['sgender'] = $sgender;
+            $_SESSION['isreg'] = $isreg;
             header('location:../views/index2.php');
         } else {
             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
             echo "<script charset='utf-8' type='text/javascript' >";
-            echo "alert(\"错误的身份证号码，请重新登录\");";
+            echo "alert(\"用户名错误或未注册，请重新登录\");";
             echo "location.href=\"../login.php\"";
             echo "</script>";
         }
