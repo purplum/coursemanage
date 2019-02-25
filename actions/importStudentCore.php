@@ -85,12 +85,14 @@
 
 //    $n = $db->query("insert into student(sname,studentid,spersonid,sgender) VALUES('$cname','$cteacher','$ctime','$cmax')");
     if ($records > 0) {
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"新增 [$records] 条记录成功 ！\");";
         echo "location.href=\"../actions/studentListCore.php\"";
         echo "</script>";
     } else {
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"新增失败！\");";
         echo "location.href=\"../actions/studentListCore.php\"";
         echo "</script>";

@@ -31,7 +31,8 @@
 $rs_exist = $db->query("select * from student WHERE spersonid='$personid' ");
 $num_exist_rows = $rs_exist->rowCount();
 if ($num_exist_rows == 0) {
-    echo "<script>";
+    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+    echo "<script charset='utf-8' type='text/javascript' >";
     echo "alert(\"注册失败, 没有您的身份信息！请确认身份证号码输入正确或与老师联系 \");";
     echo "location.href=\"../views/sign-up.php\"";
     echo "</script>";
@@ -40,7 +41,8 @@ if ($num_exist_rows == 0) {
     $rs_1 = $db->query("select * from student WHERE spersonid='$personid' and isreg='0' ");
     $num_rows = $rs_1->rowCount();
     if ($num_rows > 0) {
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"重复注册！您的身份证号已注册！\");";
         echo "location.href=\"../login.php\"";
         echo "</script>";
@@ -53,12 +55,14 @@ if ($num_exist_rows == 0) {
             $n_new_auth = $db->query("update student set sname='$username',studentid='$studentid',sgrade='$sgrade',sclass='$sclass',stel='$stel',sgender='$gender',isreg='0' WHERE spersonid='$personid'");
 
             if ((int)$n_new_auth > 0) {
-                echo "<script>";
+                echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                echo "<script charset='utf-8' type='text/javascript' >";
                 echo "alert(\"注册成功\");";
                 echo "location.href=\"../login.php\"";
                 echo "</script>";
             } else {
-                echo "<script>";
+                echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                echo "<script charset='utf-8' type='text/javascript' >";
                 echo "alert(\"注册失败！\");";
                 echo "location.href=\"../views/sign-up.php\"";
                 echo "</script>";

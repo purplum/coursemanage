@@ -30,7 +30,8 @@
         $_SESSION['sclass'] = $sclass;
         $_SESSION['studentid'] = $studentid;
         $_SESSION['saddress'] = $saddress;
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"修改信息成功！\");";
         echo "location.href=\"../views/userinfo.php\"";
         echo "</script>";

@@ -21,19 +21,22 @@
 
     if( $teacherId == 1 ) {
 
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"You are trying to delete ADMIN！\");";
         echo "location.href=\"../actions/teacherListCore.php\"";
         echo "</script>";
     } else {
         $n = $db->query("DELETE FROM teacher WHERE tid=$teacherId ");
         if ($n > 0) {
-            echo "<script>";
+            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+            echo "<script charset='utf-8' type='text/javascript' >";
             echo "alert(\"Successfully delete teacher $teacherId！\");";
             echo "location.href=\"teacherListCore.php\"";
             echo "</script>";
         } else {
-            echo "<script>";
+            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+            echo "<script charset='utf-8' type='text/javascript' >";
             echo "alert(\"Delete fail！\");";
             echo "location.href=\"teacherListCore.php\"";
             echo "</script>";

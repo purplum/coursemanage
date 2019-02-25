@@ -26,7 +26,8 @@
 
     $n = $db->query("update course set cvalid='$cvalid',callowgrade='$callowgrade',cmax='$cmax',clocation='$clocation' WHERE cid='$c_id'");
     if((int)$n>0){
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"修改信息成功！\");";
         echo "location.href=\"../actions/courseListCore.php?page=$spage\"";
         echo "</script>";

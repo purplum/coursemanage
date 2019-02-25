@@ -21,12 +21,14 @@
 
     $n = $db->query("insert into cc(sid,cid,score) VALUES('$sid','$cid','$score')");
     if ((int)$n > 0) {
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"成绩录入成功！\");";
         echo "location.href=\"../views/teacherMain.php\"";
         echo "</script>";
     } else {
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"成绩录入失败！\");";
         echo "location.href=\"#\"";
         echo "</script>";

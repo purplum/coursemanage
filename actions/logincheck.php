@@ -62,7 +62,8 @@
             $_SESSION['sgender'] = $sgender;
             header('location:../views/index2.php');
         } else {
-            echo "<script>";
+            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+            echo "<script charset='utf-8' type='text/javascript' >";
             echo "alert(\"错误的身份证号码，请重新登录\");";
             echo "location.href=\"../login.php\"";
             echo "</script>";
@@ -84,7 +85,8 @@
 
             header('location:../views/teacherMain.php');
         } else {
-            echo "<script>";
+            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+            echo "<script charset='utf-8' type='text/javascript' >";
             echo "alert(\"错误的用户名或者密码，请重新登录\");";
             echo "location.href=\"../login.php\"";
             echo "</script>";

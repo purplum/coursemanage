@@ -15,7 +15,8 @@
 
 if ($num_rows > 0) {
     // 该课程已被当前学生选择
-    echo "<script>";
+    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+    echo "<script charset='utf-8' type='text/javascript' >";
     echo "alert(\"(Duplicated course selected) 重复选课! 请重新选择\");";
     echo "location.href=\"../views/chooseCourse.php\"";
     echo "</script>";
@@ -30,7 +31,8 @@ if ($num_rows > 0) {
         // 该学生为特殊学生，不能选择
         $s_special_a = $student_special[0];
         $s_special_content = $s_special_a['specialreason'];
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"$s_special_content\");";
         echo "location.href=\"../views/chooseCourse.php\"";
         echo "</script>";
@@ -41,7 +43,8 @@ if ($num_rows > 0) {
         $num_course_count = $rs_coursecount->rowCount();
 
         if($num_course_count==1) {
-            echo "<script>";
+            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+            echo "<script charset='utf-8' type='text/javascript' >";
             echo "alert(\"(Courses full)课程已满，请下个学年再选!\");";
             echo "location.href=\"../views/chooseCourse.php\"";
             echo "</script>";
@@ -68,7 +71,8 @@ if ($num_rows > 0) {
 
                     // 该学生不能选择该课程，因课程年级设置
 
-                    echo "<script>";
+                    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                    echo "<script charset='utf-8' type='text/javascript' >";
                     echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
                     echo "location.href=\"../views/chooseCourse.php\"";
                     echo "</script>";
@@ -77,7 +81,8 @@ if ($num_rows > 0) {
                     $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
 
                     if((int)$n>0){
-                        echo "<script>";
+                        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                        echo "<script charset='utf-8' type='text/javascript' >";
                         echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
                         echo "location.href=\"../actions/myCoursesCore.php\"";
                         echo "</script>";
@@ -91,7 +96,8 @@ if ($num_rows > 0) {
                 $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
 
                 if((int)$n>0){
-                    echo "<script>";
+                    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                    echo "<script charset='utf-8' type='text/javascript' >";
                     echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
                     echo "location.href=\"../actions/myCoursesCore.php\"";
                     echo "</script>";

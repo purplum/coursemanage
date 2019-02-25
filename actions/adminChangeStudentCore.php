@@ -24,7 +24,8 @@
 
     $n = $db->query("update student set isspecial='$s_isspecial',specialreason='$s_special_reason' WHERE spersonid='$s_personid'");
     if((int)$n>0){
-        echo "<script>";
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+        echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"修改信息成功！\");";
         echo "location.href=\"../actions/studentListCore.php?page=$spage\"";
         echo "</script>";
