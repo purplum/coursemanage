@@ -97,9 +97,9 @@ INSERT INTO `student` VALUES ('3', '测试账号3','20003', '3','1', '2018','2',
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
-  `tid` int(11) NOT NULL,
-  `tname` varchar(20) default NULL,
-  `tpassword` varchar(255) default NULL,
+  `tid` int(11) NOT NULL auto_increment,
+  `tname` varchar(20) NOT NULL,
+  `tpassword` varchar(255) default '123',
   PRIMARY KEY  (`tid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -16,18 +16,18 @@
     /*$rs = $db->query('select * from student');
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
 
-    $tname = empty($data['tname'])?"":$data['tname'];
+    $tname = $data['tname'];
 
     $n = $db->query("insert into teacher(tname) VALUES('$tname')");
     if ($n > 0) {
         echo "<script>";
         echo "alert(\"新增成功！\");";
-        echo "location.href=\"../actions/teacherListCore.php\"";
+        echo "location.href=\"teacherListCore.php\"";
         echo "</script>";
     } else {
         echo "<script>";
         echo "alert(\"新增失败！\");";
-        echo "location.href=\"#\"";
+        echo "location.href=\"teacherListCore.php\"";
         echo "</script>";
     }
 ?>
