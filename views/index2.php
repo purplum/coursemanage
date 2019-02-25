@@ -8,9 +8,11 @@
 
     <link rel="shortcut icon" href="../favicon.ico">
 
+    <link href="../themes/custom/button.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css"/>
+
 
     <script src="../themes/Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="../themes/Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
@@ -61,7 +63,14 @@
             <br />
             <div class="alert alert-success" role="alert"><h3><strong>4. 选课系统仅在课程开放时间内开启，开放时间请留意负责老师通知</strong></h3></center></div>
 
+            <br />
+            <br />
+            <div align="center">
+                <a href="../actions/chooseCourseCore.php" class="btn green">开始选课 --> </a>
+            </div>
         </div>
+
+
     </div>
     <div class="footer">
         <?php include_once("../controller/functions.php");displayFooter() ?>

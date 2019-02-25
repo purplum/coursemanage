@@ -136,10 +136,6 @@ session_start();
                     <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo($_SESSION['page'] - 1) ?> "
                                      target='_self'>上一页</a></div>
 
-                    <?php for ($i = 1; $i <= $_SESSION['maxPage']; $i++) { ?>
-                        <div class=''><a href='../actions/chooseCourseCore.php?page=1' target='_self'><?php echo $i; ?></a></div>
-                    <?php } ?>
-
                     <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo($_SESSION['page'] + 1) ?> "
                                      target='_self'>下一页</a></div>
                     <div class=''><a href="../actions/chooseCourseCore.php?page=<?php echo $_SESSION['maxPage'] ?> "

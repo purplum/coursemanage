@@ -44,6 +44,12 @@
                     <li><a class="tab2" onclick="" href="">导入学生</a> </li>
                 </ul>
             </div>
+            <div>
+                <p>示例：导入第A、B、C、D列，从第2或3行开始。A:学号，B：姓名，C：性别，D：身份证号</p>
+                <p>
+                    <img src="../themes/images/importStudentSample.png" width="225" height="110" />
+                </p>
+            </div>
             <div class="cztable">
                 <form action="../actions/addTeacherCore.php" method="post">
                     <table width="80%" cellpadding="0" cellspacing="0">
@@ -58,10 +64,6 @@
                         <tr>
                             <td align="left" width="60%">表格数据起始页：</td>
                             <td>0</td>
-                        </tr>
-                        <tr>
-                            <td align="left" width="60%">数据页数：</td>
-                            <td>5</td>
                         </tr>
                         <tr>
 
@@ -81,6 +83,12 @@
                 <ul id="ulStudMsgHeadTab">
                     <li><a class="tab2" onclick="" href="">导入特殊学生</a> </li>
                 </ul>
+            </div>
+            <div>
+                <p>示例：导入第A、B、E列，从第2行开始。以第A、B列作为匹配数据（任意满足即匹配），以第5列作为特殊原因</p>
+                <p>
+                    <img src="../themes/images/importSpecialExcelSample.png" width="365" height="210" />
+                </p>
             </div>
             <div class="cztable">
                 <form action="../actions/addTeacherCore.php" method="post">
