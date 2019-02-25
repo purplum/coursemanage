@@ -44,10 +44,10 @@
             $studentname=$rowData['B'];
             $specialreason=$rowData['E'];
 
-            $rs_exist = $db->query("select * from student WHERE studentid='$studentid' ");
+            $rs_exist = $db->query("select * from student WHERE studentid='$studentid' OR sname='$studentname' ");
             $num_exists = $rs_exist->rowCount();
             if ($num_exists > 0) {
-                $n = $db->query("update student set isspecial='1',specialreason='$specialreason' WHERE studentid='$studentid' ");
+                $n = $db->query("update student set isspecial='1',specialreason='$specialreason' WHERE studentid='$studentid' OR sname='$studentname'  ");
                 if ($n > 0) {
                     $records++;
                 }
@@ -56,8 +56,6 @@
 
             }
 
-            //            print_r($rowData['A']);
-//            echo "<pre>";
         }
 
         $workbookData[$currentSheetIndex]=$sheetData;
@@ -75,12 +73,12 @@
     if ($records > 0) {
         echo "<script>";
         echo "alert(\"导入 [$records] 条记录成功 ！\");";
-        echo "location.href=../actions/specialStudentListCore.php";
+        echo "location.href=\"specialStudentListCore.php\"";
         echo "</script>";
     } else {
         echo "<script>";
         echo "alert(\"导入失败！\");";
-        echo "location.href=../actions/specialStudentListCore.php";
+        echo "location.href=\"specialStudentListCore.php\"";
         echo "</script>";
     }
 

@@ -176,12 +176,27 @@
 
     function check() {
         var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
+        var studentid = document.getElementById("studentid").value;
+        var personid = document.getElementById("personid").value;
+        var sgrade = document.getElementById("sgrade").value;
+        // var email = document.getElementById("email").value;
         // var password = document.getElementById("password").value;
         // var repassword = document.getElementById("re_password").value;
         console.log(name);
         if (name == "" || name.length == 0) {
-            layer.alert("用户名不能为空！");
+            layer.alert("姓名不能为空！");
+            return false;
+        }
+        if (studentid == "" || studentid.length == 0) {
+            layer.alert("学号不能为空！");
+            return false;
+        }
+        if (personid == "" || personid.length == 0) {
+            layer.alert("身份证号不能为空！");
+            return false;
+        }
+        if (sgrade == "" || sgrade.length == 0) {
+            layer.alert("入学年份不能为空！");
             return false;
         }
         // if(email ==""||email.length==0){

@@ -123,7 +123,7 @@ session_start();
                         <?php } ?>
                     <?php } else { ?>
                         <tr>
-                            <td colspan="9">尚未有课程发布，请耐心等待！</td>
+                            <td colspan="9">尚未选择课程，请选课！</td>
                         </tr>
                     <?php } ?>
 

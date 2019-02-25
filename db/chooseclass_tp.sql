@@ -106,4 +106,5 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', '管理员', '1');
+INSERT INTO `teacher` VALUES ('1', '管理员', 'test123');
+INSERT INTO `teacher` VALUES ('101', '测试老师1', '1');
