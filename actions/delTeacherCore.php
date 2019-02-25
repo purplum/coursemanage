@@ -7,7 +7,7 @@
  */
     session_start();
     $name = file_get_contents("php://input");
-    echo $name;
+//    echo $name;
     parse_str($name, $data);
     var_export($data);
     include("../db/db_properties.php");
@@ -16,25 +16,26 @@
     /*$rs = $db->query('select * from student');
     print_r($rs->fetchall(PDO::FETCH_ASSOC));*/
 
-    $tid = empty($data['tid'])?"":$data['tid'];
+    $teacherId= $_GET['tid'];
+//    echo $teacherId;
 
-    if( $tid = 1 ) {
+    if( $teacherId == 1 ) {
 
         echo "<script>";
         echo "alert(\"You are trying to delete ADMIN！\");";
         echo "location.href=\"../actions/teacherListCore.php\"";
         echo "</script>";
     } else {
-        $n = $db->query("DELETE FROM teacher WHERE tid='$tid' ");
+        $n = $db->query("DELETE FROM teacher WHERE tid=$teacherId ");
         if ($n > 0) {
             echo "<script>";
-            echo "alert(\"Successfully delete teacher $tid！\");";
-            echo "location.href=\"../actions/teacherListCore.php\"";
+            echo "alert(\"Successfully delete teacher $teacherId！\");";
+            echo "location.href=\"teacherListCore.php\"";
             echo "</script>";
         } else {
             echo "<script>";
             echo "alert(\"Delete fail！\");";
-            echo "location.href=\"../actions/teacherListCore.php\"";
+            echo "location.href=\"teacherListCore.php\"";
             echo "</script>";
         }
     }

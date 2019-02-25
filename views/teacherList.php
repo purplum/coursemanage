@@ -78,7 +78,7 @@ session_start();
                                     <?php echo $row['tname'] ?>
                                 </td>
                                 <td>
-                                    <a href="../actions/delTeacherCore.php?tid=<?php echo $row['tid'] ?>&page=<?php echo $_SESSION['page'] ?>">删除</a>
+                                    <a href="../actions/delTeacherCore.php?tid='<?php echo $row['tid'] ?>'&page=<?php echo $_SESSION['page'] ?>">删除</a>
                                 </td>
 
                             </tr>
