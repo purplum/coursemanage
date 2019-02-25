@@ -29,11 +29,13 @@
 
     $n = $db->query("insert into course(cname,cteacher,ctime,cmax,cxueshi,callowgrade,clocation,cvalid) VALUES('$cname','$cteacher','$ctime','$cmax','$cxueshi','$callowgrade','$clocation','$cvalid')");
     if ($n > 0) {
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
         echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"新增成功！\");";
         echo "location.href=\"courseListCore.php\"";
         echo "</script>";
     } else {
+        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
         echo "<script charset='utf-8' type='text/javascript' >";
         echo "alert(\"新增失败！\");";
         echo "location.href=\"#\"";
