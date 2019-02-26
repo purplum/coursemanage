@@ -99,11 +99,13 @@
                             <select class="form-control" name="callowgrade" id="callowgrade">
                                 <option></option>
                                 <option value='0'>全部</option>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
-                                <option value='5'>5</option>
+                                <option value='1'>一年级</option>
+                                <option value='2'>二年级</option>
+                                <option value='3'>三年级</option>
+                                <option value='4'>四年级</option>
+                                <option value='5'>五年级</option>
+                                <option value='11'>二~五年级</option>
+                                <option value='12'>三~五年级</option>
                             </select>
                             </td>
                         </tr>

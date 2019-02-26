@@ -128,7 +128,44 @@ if(!isset($_SESSION['tid'])) {
                                     <?php echo $row['cxueshi'] ?>
                                 </td>
                                 <td>
-                                    <?php if ($row['callowgrade']=='0') { echo 'all'; } else { echo $row['callowgrade']; }  ?>
+                                    <?php
+                                        if ($row['callowgrade']=='0')
+                                        {
+                                            echo '全部';
+                                        }
+                                        else if ($row['callowgrade']=='1')
+                                        {
+                                            echo '一年级';
+                                        }
+                                        else if ($row['callowgrade']=='2')
+                                        {
+                                            echo '二年级';
+                                        }
+                                        else if ($row['callowgrade']=='3')
+                                        {
+                                            echo '三年级';
+                                        }
+                                        else if ($row['callowgrade']=='4')
+                                        {
+                                            echo '四年级';
+                                        }
+                                        else if ($row['callowgrade']=='5')
+                                        {
+                                            echo '五年级';
+                                        }
+                                        else if ($row['callowgrade']=='11')
+                                        {
+                                            echo '二~五年级';
+                                        }
+                                        else if ($row['callowgrade']=='12')
+                                        {
+                                            echo '三~五年级';
+                                        }
+                                        else
+                                        {
+                                            echo $row['callowgrade'];
+                                        }
+                                    ?>
                                 </td>
                                 <td>
                                     <?php echo $row['clocation'] ?>
