@@ -6,6 +6,7 @@
      * Time: 8:35
      */
     session_start();
+
     $name = file_get_contents("php://input");
     parse_str($name, $data);
     var_export($data);

@@ -6,6 +6,15 @@
  * Time: 22:58
  */
     session_start();
+
+if(!isset($_SESSION['studentid'])) {
+    echo "[Session timeout!]";
+    echo "<script>";
+    echo "alert(\"[Session timeout!] \");";
+    echo "location.href=\"../login.php\"";
+    echo "</script>";
+}
+
     /* $name = file_get_contents("php://input");
      echo $name;
      parse_str($name, $data);

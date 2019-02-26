@@ -1,13 +1,21 @@
 <?php
 session_start();
 
+if(!isset($_SESSION['tid'])) {
+    echo "[Session timeout!]";
+    echo "<script>";
+    echo "alert(\"[Session timeout!] \");";
+    echo "location.href=\"../admin.php\"";
+    echo "</script>";
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <?php include_once("../controller/functions.php");displayTitle('管理') ?>
+    <?php include_once("../controller/functions.php");displayTitle(ADMINPAGENAME) ?>
     <link rel="shortcut icon" href="../favicon.ico">
 
     <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>

@@ -3,9 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>
-        网上选课系统-老师端首页
-    </title>
+    <?php include_once("../controller/functions.php");displayTitle(ADMINPAGENAME) ?>
     <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css"/>
@@ -27,14 +25,10 @@
             <?php include_once("../controller/functions.php");displayHeaderLogo() ?>
             <div class="topxx">
 
-                工号<?php session_start();
-                $sid = $_SESSION['tid'];
-                echo $sid ?>， <?php $sid = $_SESSION['tname'];
-                echo $sid ?>老师，欢迎您！
-                <a href="#">密码修改</a>
-                <a onclick="loginOut()" href="javascript:">安全退出</a>
+                <?php session_start(); $sid = $_SESSION['tname'];echo $sid ?>老师，欢迎您！
+                <a href="adminlogout.php">安全退出</a>
             </div>
-            <?php include_once("../controller/functions.php");displayTeacherHeaderNavi() ?>
+            <?php include_once("../controller/admin.php");displayTeacherHeaderNavi() ?>
         </div>
     </div>
 </div>

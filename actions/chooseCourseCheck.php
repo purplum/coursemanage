@@ -45,38 +45,64 @@ if ($num_rows > 0) {
         if($num_course_count==1) {
             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
             echo "<script charset='utf-8' type='text/javascript' >";
-            echo "alert(\"(Courses full)课程已满，请下个学年再选!\");";
+            echo "alert(\"(Courses full)您的课程已满，请下个学年再选!\");";
             echo "location.href=\"../views/chooseCourse.php\"";
             echo "</script>";
         } else {
 
-            // 检查学生年级是否符合课程年级设置
-            $rs_course = $db->query("select * from course WHERE cid='$cid' and cvalid='0' ");
-            $num_rows_course = $rs_course->rowCount();
-            $course_grade = $rs_course->fetchall(PDO::FETCH_ASSOC);
+            $rs_coursemax = $db->query("select * from course WHERE cid='$cid' and cvalid='0' and ccurrent >= cmax ");
+            $num_coursemax_count = $rs_coursemax->rowCount();
 
-            $course_sel = $course_grade[0];
-            $course_sel_grade = $course_sel['callowgrade'];  // 当前课程允许年级
+            if($num_coursemax_count>0) {
 
-            if ($course_sel_grade > 0) {
+                echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                echo "<script charset='utf-8' type='text/javascript' >";
+                echo "alert(\"(Courses max)当前课程可选人数已满，请选择其他课程!\");";
+                echo "location.href=\"../views/chooseCourse.php\"";
+                echo "</script>";
+            } else {
+                // 检查学生年级是否符合课程年级设置
+                $rs_course = $db->query("select * from course WHERE cid='$cid' and cvalid='0' ");
+                $num_rows_course = $rs_course->rowCount();
+                $course_grade = $rs_course->fetchall(PDO::FETCH_ASSOC);
 
-                $rs_student = $db->query("select * from student WHERE sid='$sid' ");
-                $num_rows_student = $rs_student->rowCount();
-                $student_current = $rs_student->fetchall(PDO::FETCH_ASSOC);
+                $course_sel = $course_grade[0];
+                $course_sel_grade = $course_sel['callowgrade'];  // 当前课程允许年级
 
-                $student_current_s = $student_current[0];
-                $student_current_grade_s = date("Y") - $student_current_s['sgrade'];
+                if ($course_sel_grade > 0) {
 
-                if ($student_current_grade_s != $course_sel_grade ) {
+                    $rs_student = $db->query("select * from student WHERE sid='$sid' ");
+                    $num_rows_student = $rs_student->rowCount();
+                    $student_current = $rs_student->fetchall(PDO::FETCH_ASSOC);
 
-                    // 该学生不能选择该课程，因课程年级设置
+                    $student_current_s = $student_current[0];
+                    $student_current_grade_s = date("Y") - $student_current_s['sgrade'];
 
-                    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
-                    echo "<script charset='utf-8' type='text/javascript' >";
-                    echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
-                    echo "location.href=\"../views/chooseCourse.php\"";
-                    echo "</script>";
+                    if ($student_current_grade_s != $course_sel_grade ) {
+
+                        // 该学生不能选择该课程，因课程年级设置
+
+                        echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                        echo "<script charset='utf-8' type='text/javascript' >";
+                        echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                        echo "location.href=\"../views/chooseCourse.php\"";
+                        echo "</script>";
+                    } else {
+                        $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
+                        $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
+
+                        if((int)$n>0){
+                            echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                            echo "<script charset='utf-8' type='text/javascript' >";
+                            echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
+                            echo "location.href=\"../actions/myCoursesCore.php\"";
+                            echo "</script>";
+                        }else{
+                            echo "选课失败！";
+                        }
+                    }
                 } else {
+
                     $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
                     $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
 
@@ -90,21 +116,9 @@ if ($num_rows > 0) {
                         echo "选课失败！";
                     }
                 }
-            } else {
-
-                $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
-                $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
-
-                if((int)$n>0){
-                    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
-                    echo "<script charset='utf-8' type='text/javascript' >";
-                    echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
-                    echo "location.href=\"../actions/myCoursesCore.php\"";
-                    echo "</script>";
-                }else{
-                    echo "选课失败！";
-                }
             }
+
+
         }
 
 

@@ -65,7 +65,7 @@
         } else {
             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
             echo "<script charset='utf-8' type='text/javascript' >";
-            echo "alert(\"用户名错误或未注册，请重新登录\");";
+            echo "alert(\"用户名未注册或身份证输入错误，请完成注册重新登录\");";
             echo "location.href=\"../login.php\"";
             echo "</script>";
         }

@@ -12,7 +12,7 @@ include_once("globals.php");
 function displayLoginImage()
 {
     echo '<div class="col-md-3 ">
-            <img src="themes/images/Always.jpg" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
+            <img src="themes/images/login_logo.png" alt="" style="width: 500px;height: 400px;margin-top: 100px;margin-left: 60px;"/>
         </div>';
 }
 

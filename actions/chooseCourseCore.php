@@ -4,6 +4,15 @@
      echo $name;
      parse_str($name, $data);
      var_export($data);*/
+
+if(!isset($_SESSION['studentid'])) {
+    echo "[Session timeout!]";
+    echo "<script>";
+    echo "alert(\"[Session timeout!] \");";
+    echo "location.href=\"../login.php\"";
+    echo "</script>";
+}
+
     include("../db/db_properties.php");
     $db = new PDO('mysql:dbname=' . $DB_NAME, $DB_LOGIN, $DB_PASSWORD);
     $db->query('set names utf8');
