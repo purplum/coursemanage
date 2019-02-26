@@ -538,6 +538,16 @@ body.style-3 {
     overflow: hidden;
 }
 
+.tab_close {
+    background: #f4fbff url(../images/Student/bg_inputbg.jpg) repeat-x bottom;
+    border: 1px #bed9f0 solid;
+    border-bottom: none;
+    font-size: 14px;
+    color: #0561a2;
+    height: 32px;
+    overflow: hidden;
+}
+
 .acc_data {
     padding: 20px 0;
 }

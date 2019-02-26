@@ -28,11 +28,28 @@ function displayTeacherHeaderNavi()
             </div>';
 }
 
-function displayTeacherHomePage() {
+function displayTeacherHomePage()
+{
 
-    echo '<div class="dhbg" style="align-content: center;">
-                关于 后台管理系统
-            </div>';
+    echo '<div class="morebt">
+
+
+                <ul id="ulStudMsgHeadTab">
+                    <li><a class="tab_close" onclick="" href="../actions/adminStartCore.php">打开学生选课系统</a></li>
+                </ul>
+
+            </div>
+            
+            <div class="morebt">
+
+
+                <ul id="ulStudMsgHeadTab">
+                    <li><a class="tab_close" onclick="" href="../actions/adminCloseCore.php">关闭学生选课系统</a></li>
+                </ul>
+
+            </div>
+            
+            ';
 }
 
 function displayTeacherLeftbox()

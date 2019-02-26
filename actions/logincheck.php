@@ -34,41 +34,56 @@
 //    }
     if ($shenfen == "student") {
 //        $rs = $db->query("select * from student WHERE spersonid='$personid' and spassword='$password'");
-        $rs = $db->query("select * from student WHERE spersonid='$personid' AND isreg='0' ");
-        $num_rows = $rs->rowCount();
-        if ($num_rows > 0) {
-            echo "登录成功";
-            session_start();
-            $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress,sgender,isreg from student WHERE spersonid = '$personid'");
-            $jieguo = $rs2->fetch();
-            $sid = $jieguo['sid'];
-            $xingming = $jieguo['sname'];
-            $studentid = $jieguo['studentid'];
-            $sgrade = $jieguo['sgrade'];
-            $sclass = $jieguo['sclass'];
-            $email = $jieguo['semail'];
-            $stel = $jieguo['stel'];
-            $saddress = $jieguo['saddress'];
-            $sgender = $jieguo['sgender'];
-            $_SESSION['sid'] = $sid;
-            $_SESSION['studentid'] = $studentid;
-            $_SESSION['personid'] = $personid;
-            $_SESSION['username'] = $xingming;
-            $_SESSION['sgrade'] = $sgrade;
-            $_SESSION['sclass'] = $sclass;
-            $_SESSION['email'] = $email;
-            $_SESSION['stel'] = $stel;
-            $_SESSION['saddress'] = $saddress;
-            $_SESSION['sgender'] = $sgender;
-            $_SESSION['isreg'] = $isreg;
-            header('location:../views/index2.php');
+
+        $rs_web_state = $db->query("select * from admininfo WHERE aid='10001' and isopen='0' ");
+        $num_web_state_rows = $rs_web_state->rowCount();
+        if ($num_web_state_rows > 0) {
+
+            $rs = $db->query("select * from student WHERE spersonid='$personid' AND isreg='0' ");
+            $num_rows = $rs->rowCount();
+            if ($num_rows > 0) {
+                echo "登录成功";
+                session_start();
+                $rs2 = $db->query("select sid,sname,studentid,spersonid,sgrade,sclass,semail,stel,saddress,sgender,isreg from student WHERE spersonid = '$personid'");
+                $jieguo = $rs2->fetch();
+                $sid = $jieguo['sid'];
+                $xingming = $jieguo['sname'];
+                $studentid = $jieguo['studentid'];
+                $sgrade = $jieguo['sgrade'];
+                $sclass = $jieguo['sclass'];
+                $email = $jieguo['semail'];
+                $stel = $jieguo['stel'];
+                $saddress = $jieguo['saddress'];
+                $sgender = $jieguo['sgender'];
+                $_SESSION['sid'] = $sid;
+                $_SESSION['studentid'] = $studentid;
+                $_SESSION['personid'] = $personid;
+                $_SESSION['username'] = $xingming;
+                $_SESSION['sgrade'] = $sgrade;
+                $_SESSION['sclass'] = $sclass;
+                $_SESSION['email'] = $email;
+                $_SESSION['stel'] = $stel;
+                $_SESSION['saddress'] = $saddress;
+                $_SESSION['sgender'] = $sgender;
+                $_SESSION['isreg'] = $isreg;
+                header('location:../views/index2.php');
+            } else {
+                echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                echo "<script charset='utf-8' type='text/javascript' >";
+                echo "alert(\"用户名未注册或身份证输入错误，请完成注册重新登录\");";
+                echo "location.href=\"../login.php\"";
+                echo "</script>";
+            }
         } else {
+
             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
             echo "<script charset='utf-8' type='text/javascript' >";
-            echo "alert(\"用户名未注册或身份证输入错误，请完成注册重新登录\");";
+            echo "alert(\"选课系统尚未开放，请耐心等待\");";
             echo "location.href=\"../login.php\"";
             echo "</script>";
         }
+
+
     }else {
         echo "教师";
         $password = $data['password'];

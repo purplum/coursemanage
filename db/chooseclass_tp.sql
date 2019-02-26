@@ -108,3 +108,16 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 INSERT INTO `teacher` VALUES ('1', '管理员', 'test123');
 INSERT INTO `teacher` VALUES ('101', '测试老师1', '1');
+
+DROP TABLE IF EXISTS `admininfo`;
+CREATE TABLE `admininfo` (
+                         `aid` int(11) NOT NULL auto_increment,
+                         `aname` varchar(20) default '',
+                         `isopen` varchar(10) default '1', -- 0-已开放  1- 未开放
+                         PRIMARY KEY  (`aid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+INSERT INTO `admininfo` VALUES ('10001', '默认信息', '1');
