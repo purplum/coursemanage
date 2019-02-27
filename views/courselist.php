@@ -104,7 +104,7 @@ if(!isset($_SESSION['tid'])) {
                                     <?php echo $row['cid'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['cname'] ?>
+                                    <a href="../actions/courseStaticsCore.php?cid=<?php echo $row['cid'] ?> "><?php echo $row['cname'] ?></a>
                                 </td>
                                 <td>
                                     <?php
