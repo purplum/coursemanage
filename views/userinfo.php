@@ -92,7 +92,7 @@ if(!isset($_SESSION['studentid'])) {
                     </tr>
                     <tr>
                         <td align="right">性别:</td>
-                        <td><?php if ($row['sgender']=='male') { echo '男'; } else { echo '女'; }  ?></td>
+                        <td><?php if ($_SESSION['sgender']=='male') { echo '男'; } else { echo '女'; }  ?></td>
                         <td align="right">其他:</td>
                         <td><?php echo $_SESSION['pageSize']?></td>
                     </tr>
