@@ -107,10 +107,10 @@ if(!isset($_SESSION['tid'])) {
                         <?php foreach ($_SESSION['allStaticsStudents'] as $row) { ?>
                             <tr>
                                 <td class="xxleft">
-                                    <?php echo $row['student.sid'] ?>
+                                    <?php echo $row['sid'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['student.sname'] ?>
+                                    <?php echo $row['sname'] ?>
                                 </td>
                                 <td>
                                     <?php echo $row['student.studentid'] ?>
