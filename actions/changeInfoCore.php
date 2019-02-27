@@ -18,18 +18,21 @@
 //    print_r($rs->fetchall(PDO::FETCH_ASSOC));
 
     $stel = $data['stel'];
+    $studentid = $data['studentid'];
     $sgrade = $data['sgrade'];
     $sclass = $data['sclass'];
     $semail = $data['email'];
     $saddress = $data['saddress'];
-    $studentid = $_SESSION['studentid'];
-    $n = $db->query("update student set stel='$stel',sgrade='$sgrade',sclass='$sclass',semail='$semail',saddress='$saddress' WHERE studentid='$studentid'");
+    $sgender = $data['sgender'];
+    $personid = $_SESSION['personid'];
+    $n = $db->query("update student set studentid='$studentid', sgender='$sgender', stel='$stel',sgrade='$sgrade',sclass='$sclass',semail='$semail',saddress='$saddress' WHERE spersonid='$personid'");
     if((int)$n>0){
         $_SESSION['email'] = $semail;
         $_SESSION['stel'] = $stel;
         $_SESSION['sgrade'] = $sgrade;
         $_SESSION['sclass'] = $sclass;
         $_SESSION['studentid'] = $studentid;
+        $_SESSION['sgender'] = $sgender;
         $_SESSION['saddress'] = $saddress;
         echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
         echo "<script charset='utf-8' type='text/javascript' >";

@@ -67,7 +67,7 @@ if(!isset($_SESSION['studentid'])) {
                             <td align="right" width="80">姓名：</td>
                             <td><?php echo $_SESSION['username']?></td>
                             <td align="right" width="90">学号：</td>
-                            <td><input type="text" value="<?php echo $_SESSION['studentid']?>" style="height: 25px;" name="stel"></td>
+                            <td><input type="text" value="<?php echo $_SESSION['studentid']?>" style="height: 25px;" name="studentid"></td>
 
                         </tr>
 
