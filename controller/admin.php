@@ -63,7 +63,7 @@ function displayTeacherLeftbox()
                 </div>
                 <div class="cdlist">
                     <div><a href="../views/addCourse.php">新增课程</a></div>
-                    <div><a href="#">批量导出</a></div>
+                    <div><a href="../views/exportChoose.php">批量导出</a></div>
                     <div><a href="../actions/staticsCore.php">统计数据</a></div>
                 </div>
 
