@@ -55,13 +55,21 @@
 <!--            </div>-->
             <div class="alert alert-success" role="alert"><center><h2><strong>报名注意事项</strong></h2></center></div>
             <br />
-            <div class="alert alert-success" role="alert"><h3><strong>1. 请确认学生姓名，学号，身份证号码正确</strong></h3></center></div>
+            <div class="alert alert-success" role="alert"><h3><strong>1.请确认学生班级、姓名、学号、身份证（港澳台、外籍）号码是否正确。同一身份选课不超过一门。</strong></h3></center></div>
             <br />
-            <div class="alert alert-success" role="alert"><h3><strong>2. 请确认学生是否已加入俱乐部，已加入俱乐部学生将无法进行课程选择</strong></h3></center></div>
+            <div class="alert alert-success" role="alert"><h3><strong>2.选课人数超过科目限额将无法选课，请选择未满名额的俱乐部。</strong></h3></center></div>
             <br />
-            <div class="alert alert-success" role="alert"><h3><strong>3. 如果选课失败，请及时联系课程老师</strong></h3></center></div>
+            <div class="alert alert-success" role="alert"><h3><strong>3.如俱乐部指导老师已与学生确认选课名单，系统将默认学生已选课。</strong></h3></center></div>
             <br />
-            <div class="alert alert-success" role="alert"><h3><strong>4. 选课系统仅在课程开放时间内开启，开放时间请留意负责老师通知</strong></h3></center></div>
+            <div class="alert alert-success" role="alert"><h3><strong>4.未参与俱乐部选课的学生，管理员有权为该生随机分配俱乐部。</strong></h3></center></div>
+        <br />
+            <div class="alert alert-success" role="alert"><h3><strong>5.系统开放期间学生选课成功亦可退课重选，系统关闭后不可选课或退课重选。</strong></h3></center></div>
+<br />
+            <div class="alert alert-success" role="alert"><h3><strong>6.特殊原因导致的选课失败，请学生到校后与管理员（杜老师）联系。</strong></h3></center></div>
+<br />
+            <div class="alert alert-success" role="alert"><h3><strong>7.如遇选课高峰请学生耐心等待或错峰选课。</strong></h3></center></div>
+<br />
+            <div class="alert alert-success" role="alert"><h3><strong>8.选课成功将以班级为单位公布俱乐部名单，最终名单以实际公布为准。</strong></h3></center></div>
 
             <br />
             <br />
