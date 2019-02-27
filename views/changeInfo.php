@@ -100,11 +100,10 @@ if(!isset($_SESSION['studentid'])) {
                         <tr>
                             <td align="right">性别:</td>
                             <td>
-                                <?php if ($_SESSION['sgender']=='male') { echo '男'; } else { echo '女'; }  ?>
                                 <select class="form-control" name="sgender" id="sgender">
                                     <option></option>
-                                    <option value ="male" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='male') { echo "selected=true"; }   ?>男</option>
-                                    <option value ="female" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='female') { echo "selected=true"; }   ?>女</option>
+                                    <option value ="male" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='male') { echo "selected=true"; }   ?>>男</option>
+                                    <option value ="female" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='female') { echo "selected=true"; }   ?>>女</option>
                                 </select>
                             </td>
                             <td align="right">其他:</td>
