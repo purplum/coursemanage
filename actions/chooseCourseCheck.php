@@ -83,38 +83,38 @@ if ($num_rows > 0) {
                         if($student_current_grade_s == 1 ) {
                             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                             echo "<script charset='utf-8' type='text/javascript' >";
-                            echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                            echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                             echo "location.href=\"../views/chooseCourse.php\"";
                             echo "</script>";
                         } else {
 
-                            if($student_current_grade_s == 2 && $course_sel_grade != 11 ) {
+                            if($student_current_grade_s == 2 && $course_sel_grade != 11 && $course_sel_grade!=2 ) {
 
                                 echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                 echo "<script charset='utf-8' type='text/javascript' >";
-                                echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                                echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                 echo "location.href=\"../views/chooseCourse.php\"";
                                 echo "</script>";
                             } else {
-                                if($student_current_grade_s == 3 && $course_sel_grade < 11 ) {
+                                if($student_current_grade_s == 3 && $course_sel_grade < 11 && $course_sel_grade!=3 ) {
                                     echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                     echo "<script charset='utf-8' type='text/javascript' >";
-                                    echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                                    echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                     echo "location.href=\"../views/chooseCourse.php\"";
                                     echo "</script>";
                                 } else {
 
-                                    if($student_current_grade_s == 4 && $course_sel_grade < 11 ) {
+                                    if($student_current_grade_s == 4 && $course_sel_grade < 11 && $course_sel_grade!=4 ) {
                                         echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                         echo "<script charset='utf-8' type='text/javascript' >";
-                                        echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                                        echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                         echo "location.href=\"../views/chooseCourse.php\"";
                                         echo "</script>";
                                     } else {
-                                        if($student_current_grade_s == 5 && $course_sel_grade < 11 ) {
+                                        if($student_current_grade_s == 5 && $course_sel_grade < 11 && $course_sel_grade!=5 ) {
                                             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                             echo "<script charset='utf-8' type='text/javascript' >";
-                                            echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择!\");";
+                                            echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                             echo "location.href=\"../views/chooseCourse.php\"";
                                             echo "</script>";
                                         } else {
