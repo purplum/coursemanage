@@ -113,34 +113,34 @@ if(!isset($_SESSION['tid'])) {
                                     <?php echo $row['sname'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['student.studentid'] ?>
+                                    <?php echo $row['studentid'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['student.spersonid'] ?>
+                                    <?php echo $row['spersonid'] ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.sgrade'])) { echo ''; } else { echo $row['student.sgrade']; }  ?>
+                                    <?php if (empty($row['sgrade'])) { echo ''; } else { echo $row['sgrade']; }  ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.sclass'])) { echo ''; } else { echo $row['student.sclass']; } ?>
+                                    <?php if (empty($row['sclass'])) { echo ''; } else { echo $row['sclass']; } ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.sgender']) || $row['student.sgender']=='male') { echo '男'; } else { echo '女'; }  ?>
+                                    <?php if (empty($row['sgender']) || $row['sgender']=='male') { echo '男'; } else { echo '女'; }  ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.semail'])) { echo ''; } else { echo $row['student.semail']; } ?>
+                                    <?php if (empty($row['semail'])) { echo ''; } else { echo $row['semail']; } ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.stel'])) { echo ''; } else { echo $row['student.stel']; } ?>
+                                    <?php if (empty($row['stel'])) { echo ''; } else { echo $row['stel']; } ?>
                                 </td>
                                 <td>
-                                    <?php if (empty($row['student.saddress'])) { echo ''; } else { echo $row['student.saddress']; } ?>
+                                    <?php if (empty($row['saddress'])) { echo ''; } else { echo $row['saddress']; } ?>
                                 </td>
                                 <td id="td_isspecial" >
-                                    <?php if (empty($row['student.isspecial']) || $row['student.isspecial']=='0') { echo '否'; } else { echo '是'; }  ?>
+                                    <?php if (empty($row['isspecial']) || $row['isspecial']=='0') { echo '否'; } else { echo '是'; }  ?>
                                 </td>
                                 <td id="td_specialreason">
-                                    <?php if (empty($row['student.specialreason'])) { echo ''; } else { echo $row['student.specialreason']; } ?>
+                                    <?php if (empty($row['specialreason'])) { echo ''; } else { echo $row['specialreason']; } ?>
                                 </td>
 
                             </tr>
