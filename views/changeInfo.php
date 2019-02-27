@@ -67,7 +67,7 @@ if(!isset($_SESSION['studentid'])) {
                             <td align="right" width="80">姓名：</td>
                             <td><?php echo $_SESSION['username']?></td>
                             <td align="right" width="90">学号：</td>
-                            <td><?php echo $_SESSION['studentid']?>&nbsp;</td>
+                            <td><input type="text" value="<?php echo $_SESSION['studentid']?>" style="height: 25px;" name="stel"></td>
 
                         </tr>
 
@@ -96,6 +96,21 @@ if(!isset($_SESSION['studentid'])) {
                             <td><input type="text" value="<?php echo $_SESSION['sclass']?>" style="height: 25px;" name="sclass"></td>
 
                         </tr>
+
+                        <tr>
+                            <td align="right">性别:</td>
+                            <td>
+                                <?php if ($_SESSION['sgender']=='male') { echo '男'; } else { echo '女'; }  ?>
+                                <select class="form-control" name="sgender" id="sgender">
+                                    <option></option>
+                                    <option value ="male" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='male') { echo "selected=true"; }   ?>男</option>
+                                    <option value ="female" <?php $sutdentGender=$_SESSION['sgender']; if ($sutdentGender=='female') { echo "selected=true"; }   ?>女</option>
+                                </select>
+                            </td>
+                            <td align="right">其他:</td>
+                            <td><?php echo $_SESSION['pageSize']?></td>
+                        </tr>
+
                         <tr>
 
                             <td align="right">电子邮箱：</td>
