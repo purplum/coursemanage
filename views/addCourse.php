@@ -75,10 +75,8 @@
                             <td align="right" width="80">开课时间：</td>
                             <td align="left" width="160px;">
                             <select class="form-control" name="ctime" id="ctime">
-                                <option></option>
-                                <option>2021</option>
                                 <option>2020</option>
-                                <option>2019</option>
+                                <option selected="true" >2019</option>
                                 <option>2018</option>
                                 <option>2017</option>
                                 <option>2016</option>
@@ -97,7 +95,6 @@
                             <td align="right" width="80">可选年级：</td>
                             <td align="left" width="160px;">
                             <select class="form-control" name="callowgrade" id="callowgrade">
-                                <option></option>
                                 <option value='0'>全部</option>
                                 <option value='1'>一年级</option>
                                 <option value='2'>二年级</option>
