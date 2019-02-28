@@ -114,7 +114,21 @@ if(!isset($_SESSION['studentid'])) {
                                     <?php echo $row['ctime'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row['ccurrent'] ?>/<?php echo $row['cmax'] ?>
+                                    <?php
+                                        if($row['ccurrent']==$row['cmax']) {
+                                            echo "<font color=\"red\">" . $row['ccurrent'] . "</font>";
+                                        } else {
+                                            echo "<font color=\"green\">" . $row['ccurrent'] . "</font>";
+                                        }
+                                    ?>
+                                    /
+                                    <?php
+                                        if($row['ccurrent']==$row['cmax']) {
+                                            echo "<font color=\"red\">" . $row['cmax'] . "</font>";
+                                        } else {
+                                            echo "<font color=\"green\">" . $row['cmax'] . "</font>";
+                                        }
+                                    ?>
                                 </td>
                                 <td>
                                     <?php echo $row['cxueshi'] ?>
