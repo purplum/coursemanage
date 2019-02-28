@@ -87,7 +87,7 @@ if(!isset($_SESSION['studentid'])) {
                                     <option value ="2019" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2019') { echo "selected=true"; }   ?>>2019</option>
                                     <option value ="2018" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2018') { echo "selected=true"; }   ?>>2018</option>
                                     <option value ="2017" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2017') { echo "selected=true"; }   ?>>2017</option>
-                                    <option value ="2018" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2016') { echo "selected=true"; }   ?>>2016</option>
+                                    <option value ="2016" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2016') { echo "selected=true"; }   ?>>2016</option>
                                     <option value ="2015" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2015') { echo "selected=true"; }   ?>>2015</option>
                                     <option value ="2014" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2014') { echo "selected=true"; }   ?>>2014</option>
                                 </select>
