@@ -74,7 +74,7 @@
             <br />
             <br />
             <div align="center">
-                <a href="../actions/chooseCourseCore.php" class="commonbutton">开始选课 --> </a>
+                <a href="../actions/chooseCourseCore.php" class="commonbutton2">开始选课 </a>
             </div>
         </div>
 
