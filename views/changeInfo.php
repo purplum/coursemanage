@@ -67,7 +67,8 @@ if(!isset($_SESSION['studentid'])) {
                             <td align="right" width="80">姓名：</td>
                             <td><?php echo $_SESSION['username']?></td>
                             <td align="right" width="90">学号：</td>
-                            <td><input type="text" value="<?php echo $_SESSION['studentid']?>" style="height: 25px;" name="studentid"></td>
+                            <td><?php echo $_SESSION['studentid']?></td>
+<!--                            <td><input type="text" value="--><?php //echo $_SESSION['studentid']?><!--" style="height: 25px;" name="studentid"></td>-->
 
                         </tr>
 
@@ -81,17 +82,7 @@ if(!isset($_SESSION['studentid'])) {
                         <tr>
                             <td align="right">入学年份:</td>
 
-                            <td>
-                                <select class="form-control" name="sgrade" id="sgrade">
-                                    <option></option>
-                                    <option value ="2019" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2019') { echo "selected=true"; }   ?>>2019</option>
-                                    <option value ="2018" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2018') { echo "selected=true"; }   ?>>2018</option>
-                                    <option value ="2017" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2017') { echo "selected=true"; }   ?>>2017</option>
-                                    <option value ="2016" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2016') { echo "selected=true"; }   ?>>2016</option>
-                                    <option value ="2015" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2015') { echo "selected=true"; }   ?>>2015</option>
-                                    <option value ="2014" <?php $course_info=$_SESSION['sgrade']; if ($course_info=='2014') { echo "selected=true"; }   ?>>2014</option>
-                                </select>
-                            </td>
+                            <td><?php echo $_SESSION['sgrade']?></td>
                             <td align="right">班级:</td>
                             <td><input type="text" value="<?php echo $_SESSION['sclass']?>" style="height: 25px;" name="sclass"></td>
 
