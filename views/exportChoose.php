@@ -52,17 +52,6 @@
                     <li><a class="tab2" onclick="" href="">导出课程</a></li>
                 </ul>
             </div>
-            <br/>
-            <div>
-                <p>导出选课数据至Excel</p>
-                <p>
-                </p>
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <div class="cztable">
-            </div>
             <form action="../actions/exportChoosesCore.php" enctype="multipart/form-data" method="post">
                 <button class="commonbutton" type="submit">导出全部选课数据</button>
 
