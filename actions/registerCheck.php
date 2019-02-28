@@ -33,7 +33,7 @@ $num_exist_rows = $rs_exist->rowCount();
 if ($num_exist_rows == 0) {
     echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
     echo "<script charset='utf-8' type='text/javascript' >";
-    echo "alert(\"注册失败, 没有您的身份信息！请确认身份证号和学号输入正确或与老师联系 \");";
+    echo "alert(\"注册失败, 没有您的身份信息！请确认身份证号[$personid]和学号[$studentid]输入正确或与老师联系 \");";
     echo "location.href=\"../views/sign-up.php\"";
     echo "</script>";
 } else {

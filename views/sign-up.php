@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group">
                     <label for="personid" class="">身份证号：</label>
-                    <input type="text" class="form-control" id="personid" name="personid" placeholder="请输入学生身份证号码" autocomplete="off">
+                    <input type="text" class="form-control" id="personid" name="personid" placeholder="请输入学生身份证号码" autocomplete="off" >
                 </div>
 <!--                <div class="form-group">-->
 <!--                    <label for="password" class="">密码：</label>-->
@@ -170,6 +170,22 @@
             document.getElementById("tishi2").style.display = "block";
         }
     }
+
+    // function autograde() {
+    //     var student_id = document.getElementById("studentid").value;
+    //
+    //     var grade_element = document.getElementById("sgrade");
+    //     grade_element.value = student_id;
+    //
+    //     var repassword = document.getElementById("re_password").value;
+    //     if(password!=repassword){
+    //         document.getElementById("tishi").style.display = "block";
+    //         document.getElementById("tishi2").style.display = "none";
+    //     }else{
+    //         document.getElementById("tishi").style.display = "none";
+    //         document.getElementById("tishi2").style.display = "block";
+    //     }
+    // }
 
     function check() {
         var name = document.getElementById("name").value;
