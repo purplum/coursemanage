@@ -20,7 +20,7 @@ if(!isset($_SESSION['studentid'])) {
     $pageSize = 10;
     $current_year=date("Y");
     //查询所有记录的行数
-    $res = $db->query("SELECT count(*) FROM course WHERE ctime='$current_year' AND cvalid='1' ");
+    $res = $db->query("SELECT count(*) FROM course WHERE ctime='$current_year' AND cvalid='0' ");
 
     //print_r($res->fetchall(PDO::FETCH_ASSOC));
     $res2 = $res->fetchall(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@ if(!isset($_SESSION['studentid'])) {
     $page = $page >$maxPage?$maxPage:$page;
     $page = $page<1?1:$page;
     $lim = ($page - 1) * $pageSize;
-    $rs = $db->query("select * from course WHERE ctime='$current_year' AND cvalid='1' LIMIT $lim,$pageSize");
+    $rs = $db->query("select * from course WHERE ctime='$current_year' AND cvalid='0' LIMIT $lim,$pageSize");
     $courses = $rs->fetchall(PDO::FETCH_ASSOC);
     /*foreach ($courses as $row){
         echo $row['cname'];
