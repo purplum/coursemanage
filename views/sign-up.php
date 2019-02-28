@@ -72,8 +72,8 @@
                     <input type="text" class="form-control" id="name" name="name" placeholder="请输入学生姓名" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="studentid" class="">学号：</label>
-                    <input type="text" class="form-control" id="studentid" name="studentid" placeholder="请输入学生学号" autocomplete="off">
+                    <label for="studentid" class="">学号(5位) ：</label>
+                    <input type="text" class="form-control" id="studentid" name="studentid" placeholder="请输入学生学号" autocomplete="off" maxlength="5" minlength="5">
                 </div>
                 <div class="form-group">
                     <label for="personid" class="">身份证号：</label>
@@ -95,14 +95,11 @@
                     <label for="sgrade" class="">入学年份 (年)：</label>
                     <select class="form-control" name="sgrade" id="sgrade">
                         <option></option>
-                        <option>2019</option>
                         <option>2018</option>
                         <option>2017</option>
                         <option>2016</option>
                         <option>2015</option>
                         <option>2014</option>
-                        <option>2013</option>
-                        <option>2012</option>
                     </select>
 
 <!--                    </input>-->
