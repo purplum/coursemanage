@@ -88,55 +88,63 @@ if ($num_rows > 0) {
                             echo "</script>";
                         } else {
 
-                            if($student_current_grade_s == 2 && $course_sel_grade != 11 && $course_sel_grade!=2 ) {
+                            if($student_current_grade_s <= 0 ) {
 
                                 echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                 echo "<script charset='utf-8' type='text/javascript' >";
-                                echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
+                                echo "alert(\"您的信息有误, 年级[$student_current_grade_s]!\");";
                                 echo "location.href=\"../views/chooseCourse.php\"";
                                 echo "</script>";
                             } else {
-                                if($student_current_grade_s == 3 && $course_sel_grade < 11 && $course_sel_grade!=3 ) {
+                                if($student_current_grade_s == 2 && $course_sel_grade != 11 && $course_sel_grade!=2 ) {
+
                                     echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                     echo "<script charset='utf-8' type='text/javascript' >";
                                     echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                     echo "location.href=\"../views/chooseCourse.php\"";
                                     echo "</script>";
                                 } else {
-
-                                    if($student_current_grade_s == 4 && $course_sel_grade < 11 && $course_sel_grade!=4 ) {
+                                    if($student_current_grade_s == 3 && $course_sel_grade < 11 && $course_sel_grade!=3 ) {
                                         echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                         echo "<script charset='utf-8' type='text/javascript' >";
                                         echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                         echo "location.href=\"../views/chooseCourse.php\"";
                                         echo "</script>";
                                     } else {
-                                        if($student_current_grade_s == 5 && $course_sel_grade < 11 && $course_sel_grade!=5 ) {
+
+                                        if($student_current_grade_s == 4 && $course_sel_grade < 11 && $course_sel_grade!=4 ) {
                                             echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                             echo "<script charset='utf-8' type='text/javascript' >";
                                             echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
                                             echo "location.href=\"../views/chooseCourse.php\"";
                                             echo "</script>";
                                         } else {
-                                            $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
-                                            $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
-
-                                            if((int)$n>0){
+                                            if($student_current_grade_s == 5 && $course_sel_grade < 11 && $course_sel_grade!=5 ) {
                                                 echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                                                 echo "<script charset='utf-8' type='text/javascript' >";
-                                                echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
-                                                echo "location.href=\"../actions/myCoursesCore.php\"";
+                                                echo "alert(\"(Grade not allow)该课程只允许指定年级[$course_sel_grade]选择, 您的年级[$student_current_grade_s]!\");";
+                                                echo "location.href=\"../views/chooseCourse.php\"";
                                                 echo "</script>";
-                                            }else{
-                                                echo "选课失败！";
+                                            } else {
+                                                $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
+                                                $db->query("update course set course.ccurrent=course.ccurrent+1 WHERE cid=$cid");
+
+                                                if((int)$n>0){
+                                                    echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
+                                                    echo "<script charset='utf-8' type='text/javascript' >";
+                                                    echo "alert(\"(Success)选课成功, 请刷新页面查看选课结果!\");";
+                                                    echo "location.href=\"../actions/myCoursesCore.php\"";
+                                                    echo "</script>";
+                                                }else{
+                                                    echo "选课失败！";
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
-                        // 该学生不能选择该课程，因课程年级设置
 
+                        }
 
                     } else {
                         $n = $db->query("insert into cc(sid,cid) VALUES($sid,$cid)");
