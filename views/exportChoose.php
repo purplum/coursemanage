@@ -6,9 +6,12 @@
     <?php include_once("../controller/functions.php");
     displayTitle('导出') ?>
     <link rel="shortcut icon" href="../favicon.ico">
+
     <link href="../themes/Style/StudentStyle.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css"/>
     <link href="../themes/Style/ks.css" rel="stylesheet" type="text/css"/>
+    <link href="../themes/custom/button.css" rel="stylesheet" type="text/css"/>
+
     <script src="../themes/Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="../themes/Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
     <script src="../themes/Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
@@ -61,7 +64,8 @@
             <div class="cztable">
             </div>
             <form action="../actions/exportChoosesCore.php" enctype="multipart/form-data" method="post">
-                <button class="btn btn-primary" type="submit">导出全部选课数据</button>
+                <button class="commonbutton" type="submit">导出全部选课数据</button>
+
             </form>
 
 
