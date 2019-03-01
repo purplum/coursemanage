@@ -73,11 +73,12 @@
                 </div>
                 <div class="form-group">
                     <label for="studentid" class="">学号(5位) ：</label>
-                    <input type="text" class="form-control" id="studentid" name="studentid" placeholder="请输入学生学号" autocomplete="off" maxlength="5" minlength="5">
+                    <input type="text" class="form-control" id="studentid" name="studentid" placeholder="请输入学生学号" autocomplete="off" maxlength="5" minlength="5" onblur="autograde()">
+                    <label id="tishi" style="display: none;color: red;">学号输入有误</label>
                 </div>
                 <div class="form-group">
                     <label for="personid" class="">身份证号：</label>
-                    <input type="text" class="form-control" id="personid" name="personid" placeholder="请输入学生身份证号码" autocomplete="off" >
+                    <input type="text" class="form-control" id="personid" name="personid" placeholder="请输入学生身份证号码" autocomplete="off"  >
                 </div>
 <!--                <div class="form-group">-->
 <!--                    <label for="password" class="">密码：</label>-->
@@ -92,14 +93,15 @@
 <!--                    <label id="tishi2" style="display: none;color: green;">√ 两次密码一致</label>-->
 <!--                </div>-->
                 <div class="form-group">
+                    <label id="tishi_grade" style="display: none;color: red;">请先输入学号,入学年份会自动填入</label>
                     <label for="sgrade" class="">入学年份 (年)：</label>
-                    <select class="form-control" name="sgrade" id="sgrade">
+                    <select class="form-control" name="sgrade" id="sgrade" onclick="showgradetips()">
                         <option></option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
+                        <option >2018</option>
+                        <option >2017</option>
+                        <option >2016</option>
+                        <option >2015</option>
+                        <option >2014</option>
                     </select>
 
 <!--                    </input>-->
@@ -109,7 +111,7 @@
                 </div>
                 <div class="form-group">
                     <label for="sclass" class="">班级：</label>
-                    <select class="form-control" name="sclass" >
+                    <select class="form-control" name="sclass" id="sclass" >
                         <option ></option>
                         <option >1</option>
                         <option >2</option>
@@ -171,21 +173,42 @@
         }
     }
 
-    // function autograde() {
-    //     var student_id = document.getElementById("studentid").value;
-    //
-    //     var grade_element = document.getElementById("sgrade");
-    //     grade_element.value = student_id;
-    //
-    //     var repassword = document.getElementById("re_password").value;
-    //     if(password!=repassword){
-    //         document.getElementById("tishi").style.display = "block";
-    //         document.getElementById("tishi2").style.display = "none";
-    //     }else{
-    //         document.getElementById("tishi").style.display = "none";
-    //         document.getElementById("tishi2").style.display = "block";
-    //     }
-    // }
+    function showgradetips() {
+
+        var grade_element = document.getElementById("sgrade");
+        if(0===grade_element.value.length) {
+            document.getElementById("tishi_grade").style.display = "block";
+        }
+
+    }
+
+    function autograde() {
+        var student_id = document.getElementById("studentid").value;
+
+        var grade_element = document.getElementById("sgrade");
+        console.log(student_id);
+        console.log(student_id.substring(0, 2));
+
+        if(!student_id || 0 === student_id.length || student_id.length < 5) {
+            console.log("empty for student");
+            document.getElementById("tishi").style.display = "block";
+        } else if( student_id.substring(0, 2) < 14 || student_id.substring(0, 2) > 18 ) {
+            document.getElementById("tishi").style.display = "block";
+        } else {
+            grade_element.value = '20' + student_id.substring(0, 2);
+            document.getElementById("tishi").style.display = "none";
+            document.getElementById("tishi_grade").style.display = "none";
+        }
+
+
+        var class_element = document.getElementById("sclass");
+        if(!student_id || 0 === student_id.length || student_id.length < 5) {
+            console.log("empty for student");
+        } else {
+            class_element.value = student_id.substring(2, 3);
+        }
+
+    }
 
     function check() {
         var name = document.getElementById("name").value;

@@ -68,7 +68,7 @@ if ($num_exist_rows == 0) {
 
                 echo "<meta http-equiv='Content-Type' content='text/html'; charset='utf-8'>";
                 echo "<script charset='utf-8' type='text/javascript' >";
-                echo "alert(\"学号输入有误，请确认学号 为 [5] 位并且 必须与 [入学年份 $sgrade_last_num] 相符 ！\");";
+                echo "alert(\"学号输入有误，请确认学号 [$studentid] 为 [5] 位并且 必须与 $sgrade [入学年份 $sgrade_last_num] 相符 ！\");";
                 echo "location.href=\"../views/sign-up.php\"";
                 echo "</script>";
             } else {
