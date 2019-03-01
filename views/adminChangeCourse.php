@@ -84,6 +84,8 @@ session_start();
                                     <option value ="3" <?php $course_info=$_SESSION['course_info'][0]; if ($course_info['callowgrade']=='3') { echo "selected=true"; }   ?>>三年级</option>
                                     <option value ="4" <?php $course_info=$_SESSION['course_info'][0]; if ($course_info['callowgrade']=='4') { echo "selected=true"; }   ?>>四年级</option>
                                     <option value ="5" <?php $course_info=$_SESSION['course_info'][0]; if ($course_info['callowgrade']=='5') { echo "selected=true"; }   ?>>五年级</option>
+                                    <option value ="11" <?php $course_info=$_SESSION['course_info'][0]; if ($course_info['callowgrade']=='11') { echo "selected=true"; }   ?>>二~五年级</option>
+                                    <option value ="12" <?php $course_info=$_SESSION['course_info'][0]; if ($course_info['callowgrade']=='12') { echo "selected=true"; }   ?>>三~五年级</option>
                                 </select>
                             </td>
                             <td align="right">地点：</td>
