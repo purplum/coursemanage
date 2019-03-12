@@ -46,4 +46,20 @@ class Utilities{
         return $paging_arr;
     }
 
+    function getStudentList($url) {
+
+        $client = curl_init($url);
+        curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
+        $response = curl_exec($client);
+
+        $result = json_decode($response);
+
+        $students = $result->records;
+
+//        foreach ($students as $student) {
+//            echo $student->sname . "\n";
+//        }
+        return $students;
+    }
+
 }

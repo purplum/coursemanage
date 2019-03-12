@@ -12,5 +12,9 @@ define("HOMENAME", "徐汇区逸夫小学");
 define("ADMINPAGENAME", "后台");
 define("USERPAGENAME", "主页");
 define("HOMEURL", "http://yfxx.xhedu.sh.cn/");
+define("APPNAME", "coursemanage");
+define("STUDENTCATEGORY", "student");
+define("COURSECATEGORY", "course");
+define("RESTSERVER", "localhost");
 
 ?>
